@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Large downloaded artifacts (reproducible via scripts/URLs)
+*.gguf
+*.safetensors
+*.bin
+research/papers/*.pdf
+research/papers/*.txt
+research/tokenizers/*/tokenizer.json
+research/tokenizers/*/config.json
+research/tokenizers/*/tokenizer_config.json
+research/tokenizers/*/special_tokens_map.json
+rea/webgpu_app/*.js
+rea/webgpu_app/*.html
+
+# OS
+.DS_Store
+Thumbs.db
