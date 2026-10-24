@@ -24,9 +24,9 @@ Status labels:
 |---|---|---|---|---|---|---|---|
 | F001 | Chinchilla 70B, 1.4T tokens | S01 | ✅ | ✅ 70B/1.4T | ✅ training-optimal, not inference-optimal | verified | Abstract/Sec.1 |
 | F002 | Equal scaling of params and tokens | S01 | ✅ | ✅ | ✅ | verified | ~20 tokens/param |
-| F039 | ~1B requests -> smaller/longer | S39 | ✅ | ✅ ~1B, 10k tokens/param | ✅ | verified | Inference-aware scaling |
-| F040 | Quantization degradation grows with data | S40 | ✅ | ✅ | ✅ | verified | "more data can be harmful at fixed low precision" |
-| F041 | Compute halves every ~8 months | S41 | ✅ | ✅ 8 months, CI 5-14 | ✅ | verified | Algorithmic progress |
+| F041 | ~1B requests -> smaller/longer | S39 | ✅ | ✅ ~1B, 10k tokens/param | ✅ | verified | Inference-aware scaling |
+| F042 | Quantization degradation grows with data | S40 | ✅ | ✅ | ✅ | verified | "more data can be harmful at fixed low precision" |
+| F043 | Compute halves every ~8 months | S41 | ✅ | ✅ 8 months, CI 5-14 | ✅ | verified | Algorithmic progress |
 
 ## 2. Small models and data
 
@@ -61,11 +61,11 @@ Status labels:
 | F029 | Gemma 3 1B-27B, 128K, distillation | S31 | ✅ | ✅ | ✅ | verified | Gemma 3 4B ~ Gemma 2 27B is vendor |
 | F030 | Qwen3 0.6B-235B, generation compression | S32 | ✅ | ✅ | ⚠️ previous-generation comparison | vendor | Not current same-size |
 | F033 | Gemma 3 270M = 170M emb + 100M blocks | S35/S58 | ✅ | ✅ 170M/100M | ⚠️ config gives 167.8M emb; rounding | vendor | 6T tokens |
-| F034 | Bonsai 2B 1.88B, 1.75 bpw PTQ, 262K, 18+6 | S36/S37/S62 | ✅ | ✅ | ⚠️ quality claims vendor | verified (structure) | Our parse |
+| F034 | Bonsai 2B 1.88B, PTQ payload 1.75 bpw / file 0.43GB (1.8245 bpw), 262K, 18+6 | S36/S37/S62 | ✅ | ✅ | ⚠️ quality claims vendor | verified (structure) | Our parse |
 | F035 | File 429,183,456 bytes; 1.7778/1.8245 bpw | S62 | ✅ | ✅ | ✅ | derived | Denominator matters |
 | F036 | PTQ1_0 28B/128 = 1.75 | S60/S62 | ✅ | ✅ | ✅ | verified | Cross-checked with fork |
-| F037 | Embedding 27.0%, FFN 48.1%, attention 20.7%, SSM 4.1% | S62 | ✅ | ✅ | ✅ | derived | Params, not FLOPs |
-| F038 | KV 25.8GB all-full -> 6.0GB hybrid @262K | S62 | ✅ | ✅ | ⚠️ assumptions (FP16, one sequence) | derived | 32K = 0.75GB |
+| F037 | Embedding 27.02%, FFN 48.14%, linear attention 20.15%, full attention 4.68% | S62 | ✅ | ✅ | ✅ | derived | Params, not FLOPs; linear attention has no growing KV cache |
+| F038 | KV 12.0GiB all-full -> 3.0GiB hybrid @262K | S62 | ✅ | ✅ | ⚠️ assumptions (FP16, one sequence) | derived | 32K = 0.375GiB |
 | F059 | Bonsai 2B 0.43GB LM + 0.36GB vision | S37 | ✅ | ✅ | ⚠️ headline is LM-only | verified | Deployment footprint larger |
 
 ## 5. Quantization / pruning

@@ -152,7 +152,29 @@
     },
     "embedding_params": 508559360,
     "embedding_share": 0.27024794346880343,
-    "non_embedding_params": 1373265728
+    "non_embedding_params": 1373265728,
+    "component_breakdown": {
+      "ffn": {
+        "params": 905969664,
+        "fraction": 0.4814313879526725
+      },
+      "embedding": {
+        "params": 508559360,
+        "fraction": 0.27024794346880343
+      },
+      "linear_attention": {
+        "params": 379109952,
+        "fraction": 0.20145865543907554
+      },
+      "full_attention": {
+        "params": 88080384,
+        "fraction": 0.0468058293842876
+      },
+      "norms": {
+        "params": 105728,
+        "fraction": 5.618375516098976e-05
+      }
+    }
   },
   "tensors": [
     {
@@ -3631,9 +3653,9 @@
     "kv_heads": 2,
     "key_length": 256,
     "value_length": 256,
-    "fp16_bytes_if_all_layers_full": 25769803776,
-    "fp16_bytes_with_hybrid": 6442450944,
-    "fp16_gib_with_hybrid": 6.0,
+    "fp16_bytes_if_all_layers_full": 12884901888,
+    "fp16_bytes_with_hybrid": 3221225472,
+    "fp16_gib_with_hybrid": 3.0,
     "note": "one sequence; K and V; 2 bytes/element; ignores allocator overhead and SSM state"
   }
 }

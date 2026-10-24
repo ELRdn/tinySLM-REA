@@ -47,10 +47,10 @@
 - **[S59] Qwen3.5-2B config/tokenizer** — https://huggingface.co/Qwen/Qwen3.5-2B/tree/main — tokenizer 実験の入力。
 - **[S60] PrismML llama.cpp fork (branch prism)** — https://github.com/PrismML-Eng/llama.cpp/tree/prism — PTQ1_0/PQ2_0/Q2_0 の実装。
 - **[S61] WebGPU Bonsai 2 Hermes Space** — https://huggingface.co/spaces/webml-community/ternary-bonsai-2-hermes-webgpu — WebGPU バンドル。
-- **[S36] Ternary Bonsai 2 2B/4B/9B whitepaper** — https://prismml.com — 1.88B、ternary、Hadamard、262K、90 tok/s（ベンダー）。
+- **[S36] Ternary Bonsai 2 2B/4B/9B whitepaper** — https://github.com/PrismML-Eng/Bonsai-demo/blob/main/bonsai-2-small-whitepaper.pdf — 1.88B、ternary、Hadamard、262K、90 tok/s（ベンダー）。
 - **[S37] Ternary-Bonsai-2-2B-gguf model card** — https://huggingface.co/prism-ml/Ternary-Bonsai-2-2B-gguf — PTQ1_0 0.43GB、PQ2_0 0.52GB、Q2_0 0.55GB、vision projector。
-- **[S63] Ternary Bonsai 8B whitepaper** — https://prismml.com — 8B: 75.5 avg、1.75GB、27 tok/s iPhone（ベンダー）。
-- **[S64] Ternary Bonsai 2 27B whitepaper** — https://prismml.com — 27B: 98.2% retention、9.1x smaller、46.8 tok/s laptop（ベンダー）。
+- **[S63] Ternary Bonsai 8B whitepaper** — https://github.com/PrismML-Eng/Bonsai-demo/blob/main/ternary-bonsai-8b-whitepaper.pdf — 8B: 75.5 avg、1.75GB、27 tok/s iPhone（ベンダー）。
+- **[S64] Ternary Bonsai 2 27B whitepaper** — https://github.com/PrismML-Eng/Bonsai-demo/blob/main/bonsai-2-27b-whitepaper.pdf — 27B: 98.2% retention、9.1x smaller、46.8 tok/s laptop（ベンダー）。
 
 ## D. 量子化・pruning
 

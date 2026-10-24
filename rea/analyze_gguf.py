@@ -172,6 +172,33 @@ def analyze(path: str, block_samples: int = 2000):
     emb = next((x for x in tensor_rows if x["name"] == "token_embd.weight"), None)
     emb_params = emb["params"] if emb else 0
 
+    # Component breakdown. Full-attention layers are (i+1) % interval == 0;
+    # linear-attention layers are the rest. The two layer types use different
+    # tensor names (attn_q/k/v/o vs attn_qkv/attn_gate/ssm_*).
+    n_layers = int(kv.get("qwen35.block_count", 0))
+    interval = int(kv.get("qwen35.full_attention_interval", 0)) or 1
+    full_layer_ids = {i for i in range(n_layers) if (i + 1) % interval == 0}
+    components = collections.Counter()
+    for t in tensor_rows:
+        n = t["name"]
+        p = t["params"]
+        if n == "token_embd.weight":
+            components["embedding"] += p
+        elif n == "output_norm.weight":
+            components["norms"] += p
+        elif n.startswith("blk."):
+            layer = int(n.split(".")[1])
+            if "norm" in n:
+                components["norms"] += p
+            elif ".ffn_" in n:
+                components["ffn"] += p
+            elif layer in full_layer_ids:
+                components["full_attention"] += p
+            else:
+                components["linear_attention"] += p
+        else:
+            components["other"] += p
+
     # PTQ1_0 block samples from token embedding
     block_stats = None
     if emb and emb["type"] == "PTQ1_0":
@@ -208,18 +235,19 @@ def analyze(path: str, block_samples: int = 2000):
 
     # KV-cache estimate for the hybrid layout. Only full-attention layers keep
     # a growing K/V cache; linear-attention layers keep a fixed-size state.
-    layers = int(kv.get("qwen35.block_count", 0))
+    n_layers = int(kv.get("qwen35.block_count", 0))
     interval = int(kv.get("qwen35.full_attention_interval", 0)) or 1
     kv_heads = int(kv.get("qwen35.attention.head_count_kv", 0))
     key_len = int(kv.get("qwen35.attention.key_length", 0))
     val_len = int(kv.get("qwen35.attention.value_length", 0))
     ctx = int(kv.get("qwen35.context_length", 0))
-    full_layers = layers // interval if layers and interval else 0
-    kv_bytes_fp16_full = 2 * full_layers * kv_heads * (key_len + val_len) * ctx * 2
-    kv_bytes_fp16_all = 2 * layers * kv_heads * (key_len + val_len) * ctx * 2
+    n_full_layers = n_layers // interval if n_layers and interval else 0
+    # (d_k + d_v) already counts both K and V; do not multiply by 2 again.
+    kv_bytes_fp16_full = n_full_layers * kv_heads * (key_len + val_len) * ctx * 2
+    kv_bytes_fp16_all = n_layers * kv_heads * (key_len + val_len) * ctx * 2
     kv_cache = {
-        "context": ctx, "layers": layers, "full_attention_layers": full_layers,
-        "linear_attention_layers": layers - full_layers,
+        "context": ctx, "layers": n_layers, "full_attention_layers": n_full_layers,
+        "linear_attention_layers": n_layers - n_full_layers,
         "kv_heads": kv_heads, "key_length": key_len, "value_length": val_len,
         "fp16_bytes_if_all_layers_full": kv_bytes_fp16_all,
         "fp16_bytes_with_hybrid": kv_bytes_fp16_full,
@@ -257,6 +285,10 @@ def analyze(path: str, block_samples: int = 2000):
             "embedding_params": emb_params,
             "embedding_share": emb_params / total_params if total_params else None,
             "non_embedding_params": total_params - emb_params,
+            "component_breakdown": {
+                k: {"params": v, "fraction": v / total_params}
+                for k, v in components.most_common()
+            },
         },
         "tensors": tensor_rows,
         "ptq1_block": block_stats,
