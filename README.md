@@ -14,7 +14,21 @@
 2. **実物の逆解析（REA）** — 配布されている Ternary Bonsai 2 2B の GGUF ファイル（429MB）を先頭から解析し、PTQ1_0 の28バイト量子化ブロック、ハイブリッド注意、Hadamard回転、トークナイザーを復元。さらに、ブラウザで動く WebGPU バンドルを静的解析。
 3. **主張の監査** — 「3BがGPT-4を超えた」「1.58-bitで十分」などの代表的主張を、一次資料と公平性の観点で分類。
 
-**メイン成果物:** [`REPORT.md`](REPORT.md)（約9万字）
+**メイン成果物:** [`REPORT.md`](REPORT.md)（約10万字）
+
+**追加レポート:** [`MOBILE-SLM.md`](MOBILE-SLM.md) — iPhone / Android 別に、どのモデルがどこまで載るのかを帯域・メモリ・NPU・OS・配布から定量化（約6.7万字）。
+
+---
+
+## モバイル編の結論（先出し）
+
+- **iPhoneは12GBでも、アプリが使えるのは約6GB。** Bonsaiの測定ではiPhone 17 Pro Maxのper-app limitは約6GB。
+- **Androidは8GB≈3.5GB、12GB≈5.5GB、16GB≈7.5GB。** Android 8GBはiPhone 6GBより厳しく、12GBで同等、16GBで逆転。
+- **2B三元は4KならiPhone A15以降 / Android 8GB以上で動く。** 262Kは3.75GiBで、iPhone 6GB/Android 12GBは余裕、Android 8GBは不可。
+- **4B三元は32KならiPhone/Android 8GB（nominal）。** 9B三元は32KならiPhone/Android 8GB（nominal）、128KはAndroid 16GBのみ（nominal; safeは4B三元）。
+- **8B 4-bitは4KならiPhone/Android 12GB（nominal）。** 32Kは8.54GiBで16GB Androidでも予算オーバー。
+- **NPUのTOPSはLLMの速さではない。** 帯域・KV・カーネルが支配。同じLiteRT-LMでもAndroid CPUがiPhone CPUより速いことがある。
+- **クロスプラットフォームはビルドマトリクス。** Core AI/MLX/Core ML/llama.cpp と LiteRT/ExecuTorch/llama.cpp で artifact が分かれる。
 
 ---
 
@@ -34,14 +48,20 @@
 | パス | 内容 |
 |---|---|
 | [`REPORT.md`](REPORT.md) | 本編（第0〜21章 + 付録A〜F） |
+| [`MOBILE-SLM.md`](MOBILE-SLM.md) | モバイル編（iPhone / Android の要件差、モデル別フィット、量子化、KV、熱、配布） |
 | [`rea/analyze_gguf.py`](rea/analyze_gguf.py) | GGUF v3 パーサ + PTQ1_0 ブロックデコーダ |
 | [`rea/evidence/bonsai2b.json`](rea/evidence/bonsai2b.json) | 実モデルのメタデータ、テンソル一覧、ビット/パラメータ、KVキャッシュ計算 |
+| [`rea/evidence/bonsai_4b_9b_header.json`](rea/evidence/bonsai_4b_9b_header.json) | Bonsai 4B/9B のGGUFヘッダー（HTTP Range解析） |
+| [`rea/evidence/bonsai_4b_9b_header.md`](rea/evidence/bonsai_4b_9b_header.md) | 4B/9B のパラメータ、層、KV、ビット/パラメータ |
 | [`rea/evidence/ptq1_block.md`](rea/evidence/ptq1_block.md) | 28バイト三元ブロックの逆解析メモ |
 | [`rea/evidence/webgpu_trace.md`](rea/evidence/webgpu_trace.md) | WebGPU バンドルの静的解析メモ |
 | [`research/facts.json`](research/facts.json) | 60+ の事実データベース（出典・判定・注記） |
+| [`research/mobile_facts.json`](research/mobile_facts.json) | モバイル編の41の事実データベース |
 | [`research/factcheck.md`](research/factcheck.md) | 3パスのファクトチェック記録 |
+| [`research/mobile_factcheck.md`](research/mobile_factcheck.md) | モバイル編の3パス・ファクトチェック |
 | [`research/papers/`](research/papers) | 一次資料のPDF/テキスト（主要30本） |
 | [`docs/references.md`](docs/references.md) | 完全な参考文献 |
+| [`experiments/mobile_requirements.py`](experiments/mobile_requirements.py) | モバイルSLMのメモリ/KV/帯域/フィット計算 + グラフ生成 |
 | [`experiments/tokenizer_fertility.py`](experiments/tokenizer_fertility.py) | 日本語トークン効率の実験 |
 | [`experiments/cost_calculator.py`](experiments/cost_calculator.py) | API vs 自前ホストのコスト計算 |
 
@@ -60,6 +80,7 @@
 - **PTQ1_0 の 28バイトブロック** = 24B base-3（5 trits/byte）+ 2B 2-bit（4 trits/byte）+ FP16 scale。
 - **Hadamard 回転**（block 512）をモデルメタデータと WebGPU シェーダの両方で確認。
 - **2B では投機的デコードを搭載していない**（WebGPU の `specDecodeRunner()` も `null`）。小さなターゲットでは逆効果、というベンダーの説明と一致。
+- **4B/9B のヘッダーもHTTP Rangeで解析。** 4Bは4,205,751,296 params、9Bは8,953,803,264 params。どちらも32層・8全注意・4 KVヘッドで、**32KiB/token、262Kで8.0GiBのKV**。モバイル編のフィット表の根拠です。
 
 > これは**構造の観測**であり、品質・速度の独立再現ではありません。ベンチマーク主張はベンダー主張として扱っています。
 
@@ -72,6 +93,10 @@
 python rea/analyze_gguf.py path/to/Ternary-Bonsai-2-2B-PTQ1_0.gguf \
   --json rea/evidence/bonsai2b.json --blocks 2000
 
+# モバイルSLMの要件計算 + グラフ
+python experiments/mobile_requirements.py \
+  --json rea/evidence/mobile_requirements.json --charts assets
+
 # 日本語トークン効率の実験（tokenizer.json が必要）
 python experiments/tokenizer_fertility.py
 
@@ -83,9 +108,17 @@ python experiments/cost_calculator.py --requests 1000000 --in 1000 --out 300
 
 ## 読み方
 
+### 本編（REPORT.md）
+
 - **10分:** 第0章 → 第1章 → 第2章 → 第12章 → 付録F
 - **90分:** 第0〜8章 + 第11〜12章 + 第16章
 - **徹底:** 全部。第13〜15章が実物の逆解析、付録Dがファクトチェック。
+
+### モバイル編（MOBILE-SLM.md）
+
+- **10分:** 第0章 → 第2章 → 第5章 → 第6章 → 付録F
+- **90分:** 第0〜9章 + 第11章
+- **徹底:** 全部。第7章の量子化、第8章のKV、付録Eの再現方法が核心。
 
 ---
 

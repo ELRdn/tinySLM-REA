@@ -6,6 +6,8 @@
 **プロジェクト:** tinySLM-REA  
 **ライセンス:** 本文 CC BY 4.0 / コード MIT
 
+> **モバイル編:** iPhone / Android 別のメモリ・帯域・NPU・OS・配布の要件差は、別冊 [`MOBILE-SLM.md`](MOBILE-SLM.md) で分析しています。Bonsai 2B/4B/9Bの実機フィット表と、LiteRT-LMのAndroid/iOS比較を含みます。
+
 ---
 
 > 大きなモデルは、図書館全部を暗記した博識な館長。  

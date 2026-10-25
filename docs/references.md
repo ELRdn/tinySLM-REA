@@ -1,6 +1,7 @@
 # 参考文献・一次資料
 
 **アクセス日:** 2026-10-25  
+**モバイル編:** iPhone / Android の参考文献は [`MOBILE-SLM.md`](../MOBILE-SLM.md) 付録D にあります。
 **方針:** 論文は arXiv、モデルは Hugging Face のモデルカード、製品は公式ブログを優先。ベンダー主張は「vendor」と明記。URL は執筆時点のもの。
 
 ---

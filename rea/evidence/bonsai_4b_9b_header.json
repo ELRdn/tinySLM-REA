@@ -1,0 +1,64 @@
+{
+  "4B": {
+    "repo": "prism-ml/Ternary-Bonsai-2-4B-gguf",
+    "file": "Ternary-Bonsai-2-4B-PTQ1_0.gguf",
+    "tensors": 426,
+    "kv_count": 50,
+    "params": 4205751296,
+    "types": {
+      "0": 4893696,
+      "143": 4200857600
+    },
+    "meta": {
+      "general.name": "Ternary-Bonsai-2-4B",
+      "general.architecture": "qwen35",
+      "qwen35.block_count": 32,
+      "qwen35.context_length": 262144,
+      "qwen35.embedding_length": 2560,
+      "qwen35.feed_forward_length": 9216,
+      "qwen35.attention.head_count": 16,
+      "qwen35.attention.head_count_kv": 4,
+      "qwen35.attention.key_length": 256,
+      "qwen35.attention.value_length": 256,
+      "qwen35.full_attention_interval": 4,
+      "qwen35.ssm.inner_size": 4096,
+      "qwen35.ssm.state_size": 128,
+      "qwen35.ssm.group_count": 16,
+      "qwen35.ssm.time_step_rank": 32
+    },
+    "header_bytes_fetched": 16777216,
+    "kv_bytes_per_token": 32768,
+    "full_layers": 8
+  },
+  "9B": {
+    "repo": "prism-ml/Ternary-Bonsai-2-9B-gguf",
+    "file": "Ternary-Bonsai-2-9B-PTQ1_0.gguf",
+    "tensors": 427,
+    "kv_count": 49,
+    "params": 8953803264,
+    "types": {
+      "143": 8946450432,
+      "0": 7352832
+    },
+    "meta": {
+      "general.name": "Ternary-Bonsai-2-9B",
+      "general.architecture": "qwen35",
+      "qwen35.block_count": 32,
+      "qwen35.context_length": 262144,
+      "qwen35.embedding_length": 4096,
+      "qwen35.feed_forward_length": 12288,
+      "qwen35.attention.head_count": 16,
+      "qwen35.attention.head_count_kv": 4,
+      "qwen35.attention.key_length": 256,
+      "qwen35.attention.value_length": 256,
+      "qwen35.full_attention_interval": 4,
+      "qwen35.ssm.inner_size": 4096,
+      "qwen35.ssm.state_size": 128,
+      "qwen35.ssm.group_count": 16,
+      "qwen35.ssm.time_step_rank": 32
+    },
+    "header_bytes_fetched": 16777216,
+    "kv_bytes_per_token": 32768,
+    "full_layers": 8
+  }
+}

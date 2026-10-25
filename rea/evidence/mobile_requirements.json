@@ -1,0 +1,783 @@
+{
+  "schema": "tinySLM-REA/mobile-requirements-v1",
+  "date": "2026-10-25",
+  "assumptions": {
+    "runtime_gib": 0.35,
+    "iphone_app_budget_gib": 6.0,
+    "iphone_note": "Bonsai reports ~6GB; this model treats it as 6.0GiB. If the vendor meant decimal 6GB, the budget is 5.59GiB.",
+    "android_budgets_gib": {
+      "8GB": 3.5,
+      "12GB": 5.5,
+      "16GB": 7.5
+    },
+    "note": "Android budgets are planning heuristics, not OS limits."
+  },
+  "models": [
+    {
+      "name": "Gemma 3 270M",
+      "params": 0.27,
+      "kv_bytes_per_token": 3072,
+      "fixed_kv_bytes": 7864320,
+      "max_ctx": 32768,
+      "bits": 4.5,
+      "note": "15 sliding layers capped at 512; 3 full layers"
+    },
+    {
+      "name": "Qwen3 0.6B",
+      "params": 0.6,
+      "kv_bytes_per_token": 114688,
+      "fixed_kv_bytes": 0,
+      "max_ctx": 40960,
+      "bits": 4.5,
+      "note": "full attention"
+    },
+    {
+      "name": "Llama 3.2 1B",
+      "params": 1.24,
+      "kv_bytes_per_token": 32768,
+      "fixed_kv_bytes": 0,
+      "max_ctx": 131072,
+      "bits": 4.5,
+      "note": "full attention"
+    },
+    {
+      "name": "Qwen3.5 2B",
+      "params": 1.88,
+      "kv_bytes_per_token": 12288,
+      "fixed_kv_bytes": 0,
+      "max_ctx": 262144,
+      "bits": 4.5,
+      "note": "3:1 hybrid"
+    },
+    {
+      "name": "Bonsai 2B (ternary)",
+      "params": 1.881825088,
+      "kv_bytes_per_token": 12288,
+      "fixed_kv_bytes": 0,
+      "max_ctx": 262144,
+      "bits": 1.8245413295287092,
+      "file_bits": 1.8245413295287092,
+      "note": "measured GGUF: 151 PTQ1_0 + 169 F32 tensors"
+    },
+    {
+      "name": "SmolLM3 3B",
+      "params": 3.0,
+      "kv_bytes_per_token": 73728,
+      "fixed_kv_bytes": 0,
+      "max_ctx": 65536,
+      "bits": 4.5,
+      "note": "full attention"
+    },
+    {
+      "name": "Llama 3.2 3B",
+      "params": 3.21,
+      "kv_bytes_per_token": 114688,
+      "fixed_kv_bytes": 0,
+      "max_ctx": 131072,
+      "bits": 4.5,
+      "note": "full attention"
+    },
+    {
+      "name": "Qwen3 4B",
+      "params": 4.0,
+      "kv_bytes_per_token": 147456,
+      "fixed_kv_bytes": 0,
+      "max_ctx": 262144,
+      "bits": 4.5,
+      "note": "full attention"
+    },
+    {
+      "name": "Bonsai 4B (ternary)",
+      "params": 4.205751296,
+      "kv_bytes_per_token": 32768,
+      "fixed_kv_bytes": 0,
+      "max_ctx": 262144,
+      "bits": 1.806193192456428,
+      "file_bits": 1.806193192456428,
+      "note": "measured GGUF header: 32 layers, 8 full, 4 KV heads"
+    },
+    {
+      "name": "Llama 3.2 8B",
+      "params": 8.0,
+      "kv_bytes_per_token": 131072,
+      "fixed_kv_bytes": 0,
+      "max_ctx": 131072,
+      "bits": 4.5,
+      "note": "full attention"
+    },
+    {
+      "name": "Bonsai 9B (ternary)",
+      "params": 8.953803264,
+      "kv_bytes_per_token": 32768,
+      "fixed_kv_bytes": 0,
+      "max_ctx": 262144,
+      "bits": 1.7847048161365544,
+      "file_bits": 1.7847048161365544,
+      "note": "measured GGUF header: 32 layers, 8 full, 4 KV heads"
+    }
+  ],
+  "devices": [
+    {
+      "name": "iPhone 17 Pro Max (12GB)",
+      "platform": "iOS",
+      "ram_gib": 12,
+      "app_budget_gib": 6.0,
+      "bandwidth_gbs": 76.8,
+      "npu": "A19 Pro 16-core ANE",
+      "source": "Bonsai whitepaper 6GB; bandwidth estimate"
+    },
+    {
+      "name": "iPhone 18 Pro Max (12GB)",
+      "platform": "iOS",
+      "ram_gib": 12,
+      "app_budget_gib": 6.0,
+      "bandwidth_gbs": 115.2,
+      "npu": "A20 Pro dual 16-core ANE",
+      "source": "budget assumed same as 17 Pro Max; bandwidth derived from +50%"
+    },
+    {
+      "name": "Galaxy S26 Ultra (12GB)",
+      "platform": "Android",
+      "ram_gib": 12,
+      "app_budget_gib": 5.5,
+      "bandwidth_gbs": 85.3,
+      "npu": "Snapdragon 8 Elite Gen 5 Hexagon",
+      "source": "planning heuristic; LPDDR5X 10667 estimate"
+    },
+    {
+      "name": "Galaxy S26 Ultra (16GB)",
+      "platform": "Android",
+      "ram_gib": 16,
+      "app_budget_gib": 7.5,
+      "bandwidth_gbs": 85.3,
+      "npu": "Snapdragon 8 Elite Gen 5 Hexagon",
+      "source": "planning heuristic; LPDDR5X 10667 estimate"
+    },
+    {
+      "name": "Pixel 11 Pro XL (16GB)",
+      "platform": "Android",
+      "ram_gib": 16,
+      "app_budget_gib": 7.5,
+      "bandwidth_gbs": 85.3,
+      "npu": "Google Tensor G6 TPU",
+      "source": "planning heuristic; bandwidth estimate"
+    },
+    {
+      "name": "Android 8GB class",
+      "platform": "Android",
+      "ram_gib": 8,
+      "app_budget_gib": 3.5,
+      "bandwidth_gbs": 51.2,
+      "npu": "varies (often no usable LLM NPU)",
+      "source": "planning heuristic; LPDDR5 6400 estimate"
+    }
+  ],
+  "table": [
+    {
+      "model": "Gemma 3 270M",
+      "params_b": 0.27,
+      "bits": 4.5,
+      "note": "15 sliding layers capped at 512; 3 full layers",
+      "ctx_4096": 0.5104875847697258,
+      "ctx_32768": 0.5925188347697258,
+      "ctx_131072": null,
+      "ctx_262144": null,
+      "weights_gib": 0.1414446160197258,
+      "kv_per_token_kib": 3.0
+    },
+    {
+      "model": "Qwen3 0.6B",
+      "params_b": 0.6,
+      "bits": 4.5,
+      "note": "full attention",
+      "ctx_4096": 1.101821368932724,
+      "ctx_32768": 4.164321368932724,
+      "ctx_131072": null,
+      "ctx_262144": null,
+      "weights_gib": 0.314321368932724,
+      "kv_per_token_kib": 112.0
+    },
+    {
+      "model": "Llama 3.2 1B",
+      "params_b": 1.24,
+      "bits": 4.5,
+      "note": "full attention",
+      "ctx_4096": 1.1245974957942964,
+      "ctx_32768": 1.9995974957942964,
+      "ctx_131072": 4.999597495794296,
+      "ctx_262144": null,
+      "weights_gib": 0.6495974957942963,
+      "kv_per_token_kib": 32.0
+    },
+    {
+      "model": "Qwen3.5 2B",
+      "params_b": 1.88,
+      "bits": 4.5,
+      "note": "3:1 hybrid",
+      "ctx_4096": 1.3817486226558686,
+      "ctx_32768": 1.7098736226558686,
+      "ctx_131072": 2.8348736226558686,
+      "ctx_262144": 4.334873622655868,
+      "weights_gib": 0.9848736226558685,
+      "kv_per_token_kib": 12.0
+    },
+    {
+      "model": "Bonsai 2B (ternary)",
+      "params_b": 1.881825088,
+      "bits": 1.8245413295287092,
+      "note": "measured GGUF: 151 PTQ1_0 + 169 F32 tensors",
+      "ctx_4096": 0.7965832412242889,
+      "ctx_32768": 1.124708241224289,
+      "ctx_131072": 2.249708241224289,
+      "ctx_262144": 3.749708241224289,
+      "weights_gib": 0.39970824122428894,
+      "kv_per_token_kib": 12.0
+    },
+    {
+      "model": "SmolLM3 3B",
+      "params_b": 3.0,
+      "bits": 4.5,
+      "note": "full attention",
+      "ctx_4096": 2.20285684466362,
+      "ctx_32768": 4.17160684466362,
+      "ctx_131072": null,
+      "ctx_262144": null,
+      "weights_gib": 1.57160684466362,
+      "kv_per_token_kib": 72.0
+    },
+    {
+      "model": "Llama 3.2 3B",
+      "params_b": 3.21,
+      "bits": 4.5,
+      "note": "full attention",
+      "ctx_4096": 2.4691193237900735,
+      "ctx_32768": 5.531619323790073,
+      "ctx_131072": 16.031619323790075,
+      "ctx_262144": null,
+      "weights_gib": 1.6816193237900734,
+      "kv_per_token_kib": 112.0
+    },
+    {
+      "model": "Qwen3 4B",
+      "params_b": 4.0,
+      "bits": 4.5,
+      "note": "full attention",
+      "ctx_4096": 3.0079757928848267,
+      "ctx_32768": 6.945475792884826,
+      "ctx_131072": 20.445475792884828,
+      "ctx_262144": 38.44547579288483,
+      "weights_gib": 2.0954757928848267,
+      "kv_per_token_kib": 144.0
+    },
+    {
+      "model": "Bonsai 4B (ternary)",
+      "params_b": 4.205751296,
+      "bits": 1.806193192456428,
+      "note": "measured GGUF header: 32 layers, 8 full, 4 KV heads",
+      "ctx_4096": 1.3593372762203217,
+      "ctx_32768": 2.2343372762203217,
+      "ctx_131072": 5.234337276220321,
+      "ctx_262144": 9.234337276220321,
+      "weights_gib": 0.8843372762203217,
+      "kv_per_token_kib": 32.0
+    },
+    {
+      "model": "Llama 3.2 8B",
+      "params_b": 8.0,
+      "bits": 4.5,
+      "note": "full attention",
+      "ctx_4096": 5.040951585769653,
+      "ctx_32768": 8.540951585769653,
+      "ctx_131072": 20.540951585769655,
+      "ctx_262144": null,
+      "weights_gib": 4.190951585769653,
+      "kv_per_token_kib": 128.0
+    },
+    {
+      "model": "Bonsai 9B (ternary)",
+      "params_b": 8.953803264,
+      "bits": 1.7847048161365544,
+      "note": "measured GGUF header: 32 layers, 8 full, 4 KV heads",
+      "ctx_4096": 2.3353047132492066,
+      "ctx_32768": 3.2103047132492066,
+      "ctx_131072": 6.210304713249206,
+      "ctx_262144": 10.210304713249206,
+      "weights_gib": 1.8603047132492065,
+      "kv_per_token_kib": 32.0
+    }
+  ],
+  "fit": [
+    {
+      "model": "Gemma 3 270M",
+      "ctx": 4096,
+      "total_gib": 0.5104875847697258,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Gemma 3 270M",
+      "ctx": 32768,
+      "total_gib": 0.5925188347697258,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Qwen3 0.6B",
+      "ctx": 4096,
+      "total_gib": 1.101821368932724,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Qwen3 0.6B",
+      "ctx": 32768,
+      "total_gib": 4.164321368932724,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)"
+      ]
+    },
+    {
+      "model": "Llama 3.2 1B",
+      "ctx": 4096,
+      "total_gib": 1.1245974957942964,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Llama 3.2 1B",
+      "ctx": 32768,
+      "total_gib": 1.9995974957942964,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Llama 3.2 1B",
+      "ctx": 131072,
+      "total_gib": 4.999597495794296,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)"
+      ]
+    },
+    {
+      "model": "Qwen3.5 2B",
+      "ctx": 4096,
+      "total_gib": 1.3817486226558686,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Qwen3.5 2B",
+      "ctx": 32768,
+      "total_gib": 1.7098736226558686,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Qwen3.5 2B",
+      "ctx": 131072,
+      "total_gib": 2.8348736226558686,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Qwen3.5 2B",
+      "ctx": 262144,
+      "total_gib": 4.334873622655868,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)"
+      ]
+    },
+    {
+      "model": "Bonsai 2B (ternary)",
+      "ctx": 4096,
+      "total_gib": 0.7965832412242889,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Bonsai 2B (ternary)",
+      "ctx": 32768,
+      "total_gib": 1.124708241224289,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Bonsai 2B (ternary)",
+      "ctx": 131072,
+      "total_gib": 2.249708241224289,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Bonsai 2B (ternary)",
+      "ctx": 262144,
+      "total_gib": 3.749708241224289,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)"
+      ]
+    },
+    {
+      "model": "SmolLM3 3B",
+      "ctx": 4096,
+      "total_gib": 2.20285684466362,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "SmolLM3 3B",
+      "ctx": 32768,
+      "total_gib": 4.17160684466362,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)"
+      ]
+    },
+    {
+      "model": "Llama 3.2 3B",
+      "ctx": 4096,
+      "total_gib": 2.4691193237900735,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Llama 3.2 3B",
+      "ctx": 32768,
+      "total_gib": 5.531619323790073,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)"
+      ]
+    },
+    {
+      "model": "Llama 3.2 3B",
+      "ctx": 131072,
+      "total_gib": 16.031619323790075,
+      "fits": []
+    },
+    {
+      "model": "Qwen3 4B",
+      "ctx": 4096,
+      "total_gib": 3.0079757928848267,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Qwen3 4B",
+      "ctx": 32768,
+      "total_gib": 6.945475792884826,
+      "fits": [
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)"
+      ]
+    },
+    {
+      "model": "Qwen3 4B",
+      "ctx": 131072,
+      "total_gib": 20.445475792884828,
+      "fits": []
+    },
+    {
+      "model": "Qwen3 4B",
+      "ctx": 262144,
+      "total_gib": 38.44547579288483,
+      "fits": []
+    },
+    {
+      "model": "Bonsai 4B (ternary)",
+      "ctx": 4096,
+      "total_gib": 1.3593372762203217,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Bonsai 4B (ternary)",
+      "ctx": 32768,
+      "total_gib": 2.2343372762203217,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Bonsai 4B (ternary)",
+      "ctx": 131072,
+      "total_gib": 5.234337276220321,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)"
+      ]
+    },
+    {
+      "model": "Bonsai 4B (ternary)",
+      "ctx": 262144,
+      "total_gib": 9.234337276220321,
+      "fits": []
+    },
+    {
+      "model": "Llama 3.2 8B",
+      "ctx": 4096,
+      "total_gib": 5.040951585769653,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)"
+      ]
+    },
+    {
+      "model": "Llama 3.2 8B",
+      "ctx": 32768,
+      "total_gib": 8.540951585769653,
+      "fits": []
+    },
+    {
+      "model": "Llama 3.2 8B",
+      "ctx": 131072,
+      "total_gib": 20.540951585769655,
+      "fits": []
+    },
+    {
+      "model": "Bonsai 9B (ternary)",
+      "ctx": 4096,
+      "total_gib": 2.3353047132492066,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Bonsai 9B (ternary)",
+      "ctx": 32768,
+      "total_gib": 3.2103047132492066,
+      "fits": [
+        "iPhone 17 Pro Max (12GB)",
+        "iPhone 18 Pro Max (12GB)",
+        "Galaxy S26 Ultra (12GB)",
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)",
+        "Android 8GB class"
+      ]
+    },
+    {
+      "model": "Bonsai 9B (ternary)",
+      "ctx": 131072,
+      "total_gib": 6.210304713249206,
+      "fits": [
+        "Galaxy S26 Ultra (16GB)",
+        "Pixel 11 Pro XL (16GB)"
+      ]
+    },
+    {
+      "model": "Bonsai 9B (ternary)",
+      "ctx": 262144,
+      "total_gib": 10.210304713249206,
+      "fits": []
+    }
+  ],
+  "litert": [
+    {
+      "model": "Gemma4-E2B",
+      "size_mb": 2583,
+      "device": "Galaxy S26 Ultra",
+      "cpu": 47,
+      "gpu": 52,
+      "prefill_gpu": 3808
+    },
+    {
+      "model": "Gemma4-E2B",
+      "size_mb": 2583,
+      "device": "iPhone 17 Pro",
+      "cpu": 25,
+      "gpu": 57,
+      "prefill_gpu": 2878
+    },
+    {
+      "model": "Gemma4-E4B",
+      "size_mb": 3654,
+      "device": "Galaxy S26 Ultra",
+      "cpu": 18,
+      "gpu": 22,
+      "prefill_gpu": 1293
+    },
+    {
+      "model": "Gemma4-E4B",
+      "size_mb": 3654,
+      "device": "iPhone 17 Pro",
+      "cpu": 10,
+      "gpu": 25,
+      "prefill_gpu": 1189
+    },
+    {
+      "model": "Gemma3-1B",
+      "size_mb": 1005,
+      "device": "Galaxy S24 Ultra",
+      "cpu": 33,
+      "gpu": 24,
+      "prefill_gpu": null
+    },
+    {
+      "model": "Phi-4-mini",
+      "size_mb": 3906,
+      "device": "Galaxy S24 Ultra",
+      "cpu": 7,
+      "gpu": 10,
+      "prefill_gpu": null
+    },
+    {
+      "model": "Qwen2.5-1.5B",
+      "size_mb": 1598,
+      "device": "Galaxy S25 Ultra",
+      "cpu": 34,
+      "gpu": 31,
+      "prefill_gpu": null
+    },
+    {
+      "model": "Qwen3-0.6B",
+      "size_mb": 586,
+      "device": "Vivo X300 Pro",
+      "cpu": 9,
+      "gpu": 21,
+      "prefill_gpu": null
+    }
+  ],
+  "bonsai_measured": [
+    {
+      "model": "Bonsai 2B",
+      "size_gb": 0.52,
+      "tok_s": 89.9
+    },
+    {
+      "model": "Bonsai 4B",
+      "size_gb": 0.95,
+      "tok_s": 39.8
+    },
+    {
+      "model": "Bonsai 9B",
+      "size_gb": 2.0,
+      "tok_s": 22.3
+    }
+  ]
+}

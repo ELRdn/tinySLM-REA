@@ -1,0 +1,637 @@
+{
+  "schema": "tinySLM-REA/mobile-facts-v1",
+  "last_updated": "2026-10-25",
+  "status_legend": {
+    "verified": "primary source read; number/claim checked in context",
+    "derived": "calculated by this project from verified inputs",
+    "vendor": "vendor or model-card claim; not independently replicated here",
+    "estimate": "planning estimate or inference; not a measured value",
+    "contested": "sources disagree, or the claim depends on a non-comparable setting",
+    "unverified": "not checked yet; do not use as a settled fact"
+  },
+  "sources": {
+    "S101": {
+      "title": "Apple Foundation Models framework",
+      "url": "https://developer.apple.com/documentation/foundationmodels",
+      "type": "docs"
+    },
+    "S102": {
+      "title": "Managing the context window (Foundation Models)",
+      "url": "https://developer.apple.com/documentation/foundationmodels/managing-the-context-window",
+      "type": "docs"
+    },
+    "S103": {
+      "title": "Adding server-side intelligence with Private Cloud Compute",
+      "url": "https://developer.apple.com/documentation/foundationmodels/adding-server-side-intelligence-with-private-cloud-compute",
+      "type": "docs"
+    },
+    "S104": {
+      "title": "Apple Intelligence device and storage requirements",
+      "url": "https://support.apple.com/en-us/121115",
+      "type": "docs"
+    },
+    "S105": {
+      "title": "Apple Core AI",
+      "url": "https://developer.apple.com/documentation/coreai",
+      "type": "docs"
+    },
+    "S106": {
+      "title": "Core ML palettization overview",
+      "url": "https://apple.github.io/coremltools/docs-guides/source/opt-palettization-overview.html",
+      "type": "docs"
+    },
+    "S107": {
+      "title": "Core ML quantization overview",
+      "url": "https://apple.github.io/coremltools/docs-guides/source/opt-quantization-overview.html",
+      "type": "docs"
+    },
+    "S108": {
+      "title": "MLX quantize API",
+      "url": "https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.quantize.html",
+      "type": "docs"
+    },
+    "S109": {
+      "title": "Ternary Bonsai 2 2B/4B/9B whitepaper",
+      "url": "https://github.com/PrismML-Eng/Bonsai-demo/blob/main/bonsai-2-small-whitepaper.pdf",
+      "type": "vendor-paper"
+    },
+    "S110": {
+      "title": "Ternary-Bonsai-2-2B-gguf model card",
+      "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-2B-gguf",
+      "type": "model-card"
+    },
+    "S111": {
+      "title": "Ternary-Bonsai-2-4B-gguf",
+      "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-4B-gguf",
+      "type": "artifact"
+    },
+    "S112": {
+      "title": "Ternary-Bonsai-2-9B-gguf",
+      "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-9B-gguf",
+      "type": "artifact"
+    },
+    "S113": {
+      "title": "iPhone 17 Pro specifications",
+      "url": "https://www.gsmarena.com/apple_iphone_17_pro-14049.php",
+      "type": "device-spec"
+    },
+    "S114": {
+      "title": "iPhone 18 Pro Max specifications",
+      "url": "https://www.gsmarena.com/apple_iphone_18_pro_max-14716.php",
+      "type": "device-spec"
+    },
+    "S115": {
+      "title": "Apple iPhone 18 Pro",
+      "url": "https://www.apple.com/iphone-18-pro/",
+      "type": "vendor-page"
+    },
+    "S116": {
+      "title": "Apple A20 Pro",
+      "url": "https://en.wikipedia.org/wiki/Apple_A20_Pro",
+      "type": "secondary"
+    },
+    "S117": {
+      "title": "Samsung Galaxy S26 Ultra specifications",
+      "url": "https://www.gsmarena.com/samsung_galaxy_s26_ultra_5g-14320.php",
+      "type": "device-spec"
+    },
+    "S118": {
+      "title": "Google Pixel 11 Pro XL specifications",
+      "url": "https://www.gsmarena.com/google_pixel_11_pro_xl_5g-14800.php",
+      "type": "device-spec"
+    },
+    "S119": {
+      "title": "MediaTek Dimensity 9500",
+      "url": "https://www.mediatek.com/products/smartphones/mediatek-dimensity-9500",
+      "type": "vendor-page"
+    },
+    "S120": {
+      "title": "LiteRT-LM overview",
+      "url": "https://developers.google.com/edge/litert-lm/overview",
+      "type": "docs"
+    },
+    "S121": {
+      "title": "LiteRT NPU acceleration",
+      "url": "https://ai.google.dev/edge/litert/next/npu",
+      "type": "docs"
+    },
+    "S122": {
+      "title": "LiteRT Qualcomm NPU",
+      "url": "https://ai.google.dev/edge/litert/next/qualcomm",
+      "type": "docs"
+    },
+    "S123": {
+      "title": "LiteRT MediaTek NPU",
+      "url": "https://ai.google.dev/edge/litert/next/mediatek",
+      "type": "docs"
+    },
+    "S124": {
+      "title": "Android NNAPI",
+      "url": "https://developer.android.com/ndk/guides/neuralnetworks",
+      "type": "docs"
+    },
+    "S125": {
+      "title": "Android memory management",
+      "url": "https://developer.android.com/topic/performance/memory-management",
+      "type": "docs"
+    },
+    "S126": {
+      "title": "Google Play app size limits",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9859372",
+      "type": "docs"
+    },
+    "S127": {
+      "title": "Gemini Nano",
+      "url": "https://developer.android.com/ai/gemini-nano",
+      "type": "docs"
+    },
+    "S128": {
+      "title": "ML Kit GenAI overview",
+      "url": "https://developers.google.com/ml-kit/genai",
+      "type": "docs"
+    },
+    "S129": {
+      "title": "ML Kit Prompt API get started",
+      "url": "https://developers.google.com/ml-kit/genai/prompt/android/get-started",
+      "type": "docs"
+    },
+    "S130": {
+      "title": "ExecuTorch backends",
+      "url": "https://docs.pytorch.org/executorch/stable/backends-section.html",
+      "type": "docs"
+    },
+    "S131": {
+      "title": "This project's Bonsai 4B/9B GGUF header parse",
+      "url": "../rea/evidence/bonsai_4b_9b_header.json",
+      "type": "evidence"
+    },
+    "S132": {
+      "title": "This project's Bonsai 2B GGUF parse",
+      "url": "../rea/evidence/bonsai2b.json",
+      "type": "evidence"
+    },
+    "S133": {
+      "title": "MLX documentation",
+      "url": "https://ml-explore.github.io/mlx/build/html/index.html",
+      "type": "docs"
+    },
+    "S134": {
+      "title": "Qualcomm AI Hub Llama 3.2 3B",
+      "url": "https://aihub.qualcomm.com/models/llama_v3_2_3b_instruct",
+      "type": "docs"
+    },
+    "S135": {
+      "title": "PrismML llama.cpp fork (branch prism)",
+      "url": "https://github.com/PrismML-Eng/llama.cpp/tree/prism",
+      "type": "source"
+    },
+    "S136": {
+      "title": "Apple Intelligence Foundation Language Models 2025",
+      "url": "https://arxiv.org/abs/2507.13575",
+      "type": "paper"
+    },
+    "S137": {
+      "title": "LiteRT quantization",
+      "url": "https://ai.google.dev/edge/litert/quantization/model_optimization",
+      "type": "docs"
+    },
+    "S138": {
+      "title": "Apple Core ML compute units",
+      "url": "https://developer.apple.com/documentation/coreml/mlcomputeunits",
+      "type": "docs"
+    },
+    "S139": {
+      "title": "Qwen3-0.6B model card/config",
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+      "type": "model-card"
+    },
+    "S140": {
+      "title": "Qwen3.5-2B model card/config",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-2B",
+      "type": "model-card"
+    }
+  },
+  "facts": [
+    {
+      "id": "F101",
+      "claim": "Apple Foundation Models provides the on-device Apple Intelligence model with a 4,096-token context per session; instructions, tools, schemas and outputs all consume that window.",
+      "value": "4,096 tokens/session",
+      "sources": [
+        "S101",
+        "S102"
+      ],
+      "status": "verified",
+      "note": "This is the system model, not custom Core AI models."
+    },
+    {
+      "id": "F102",
+      "claim": "Private Cloud Compute exposes a 32K-token context and stronger reasoning, with a daily request limit.",
+      "value": "32K; daily quota",
+      "sources": [
+        "S103"
+      ],
+      "status": "verified",
+      "note": "Requires network and Apple Intelligence eligibility."
+    },
+    {
+      "id": "F103",
+      "claim": "Apple Intelligence requires iOS/iPadOS/macOS/visionOS 27 (2026) and uses up to 8-14GB of storage depending on device class.",
+      "value": "8-14GB storage",
+      "sources": [
+        "S104"
+      ],
+      "status": "verified",
+      "note": "Storage includes multiple models/assets, not just the 3B LLM."
+    },
+    {
+      "id": "F104",
+      "claim": "Core AI (iOS 27) runs .aimodel models on CPU, GPU or Neural Engine and integrates with Foundation Models sessions; a background inference entitlement exists.",
+      "value": ".aimodel; CPU/GPU/ANE",
+      "sources": [
+        "S105"
+      ],
+      "status": "verified",
+      "note": "Requires iOS 27 and Xcode 27."
+    },
+    {
+      "id": "F105",
+      "claim": "Core ML palettization supports 1, 2, 3, 4, 6 and 8 bits; per-grouped-channel palettization and 8-bit LUTs are available from iOS 18.",
+      "value": "1/2/3/4/6/8-bit",
+      "sources": [
+        "S106"
+      ],
+      "status": "verified",
+      "note": "ANE JIT decompression from iOS 17."
+    },
+    {
+      "id": "F106",
+      "claim": "Core ML linear quantization supports 4-bit and 8-bit weights and 8-bit activations; A17 Pro/M4 can use INT8 activation compute on the Neural Engine.",
+      "value": "4/8-bit weights; 8-bit activations",
+      "sources": [
+        "S107"
+      ],
+      "status": "verified",
+      "note": "Activation quantization uses per-tensor scales."
+    },
+    {
+      "id": "F107",
+      "claim": "MLX affine quantization supports 1, 2, 3, 4, 5, 6 and 8 bits with group sizes 32, 64 and 128; MXFP4/8 and NVFP4 are also supported.",
+      "value": "1-8-bit affine; MXFP4/8; NVFP4",
+      "sources": [
+        "S108",
+        "S133"
+      ],
+      "status": "verified",
+      "note": "MLX uses the GPU, not the Neural Engine."
+    },
+    {
+      "id": "F108",
+      "claim": "Bonsai 2B decodes at 89.9 tok/s on iPhone 17 Pro Max with llama.cpp Metal and the PQ2_0 pack (0.52GB), batch 1, tg128.",
+      "value": "89.9 tok/s; PQ2_0 0.52GB",
+      "sources": [
+        "S109"
+      ],
+      "status": "vendor",
+      "note": "The file analyzed in this project is PTQ1_0 0.43GB, not PQ2_0."
+    },
+    {
+      "id": "F109",
+      "claim": "Bonsai 4B and 9B decode at 39.8 and 22.3 tok/s on iPhone 17 Pro Max.",
+      "value": "39.8 / 22.3 tok/s",
+      "sources": [
+        "S109"
+      ],
+      "status": "vendor",
+      "note": "Fastest pack per device; batch 1."
+    },
+    {
+      "id": "F110",
+      "claim": "The Bonsai whitepaper reports an approximately 6GB per-app memory limit on iPhone 17 Pro Max; all three models fit.",
+      "value": "~6GB per app",
+      "sources": [
+        "S109"
+      ],
+      "status": "vendor",
+      "note": "Apple does not publish this limit; device/OS dependent."
+    },
+    {
+      "id": "F111",
+      "claim": "The Bonsai 2B PTQ1_0 file is 429,183,456 bytes with 1.8245 bits/param; the PTQ1_0 payload is 28 bytes per 128 weights (1.75 bit/weight).",
+      "value": "429,183,456 bytes; 1.8245 bpw",
+      "sources": [
+        "S132",
+        "S135"
+      ],
+      "status": "derived",
+      "note": "Confirmed by the project's GGUF parser and PrismML fork."
+    },
+    {
+      "id": "F112",
+      "claim": "The Bonsai 4B GGUF header reports 4,205,751,296 parameters, 32 layers, 8 full-attention layers, 4 KV heads, and 32KiB KV per token.",
+      "value": "4.205B; 32 layers; 32KiB/token",
+      "sources": [
+        "S131"
+      ],
+      "status": "derived",
+      "note": "HTTP Range header parse; data section not downloaded."
+    },
+    {
+      "id": "F113",
+      "claim": "The Bonsai 9B GGUF header reports 8,953,803,264 parameters, 32 layers, 8 full-attention layers, 4 KV heads, and 32KiB KV per token.",
+      "value": "8.954B; 32 layers; 32KiB/token",
+      "sources": [
+        "S131"
+      ],
+      "status": "derived",
+      "note": "HTTP Range header parse; data section not downloaded."
+    },
+    {
+      "id": "F114",
+      "claim": "The Bonsai 4B PTQ1_0 file is 949,549,920 bytes, or 1.8062 bits/param including F32 tensors and metadata.",
+      "value": "949,549,920 bytes; 1.8062 bpw",
+      "sources": [
+        "S111",
+        "S131"
+      ],
+      "status": "derived",
+      "note": "Payload remains 1.75 bit/param."
+    },
+    {
+      "id": "F115",
+      "claim": "The Bonsai 9B PTQ1_0 file is 1,997,486,976 bytes, or 1.7847 bits/param including F32 tensors and metadata.",
+      "value": "1,997,486,976 bytes; 1.7847 bpw",
+      "sources": [
+        "S112",
+        "S131"
+      ],
+      "status": "derived",
+      "note": "Payload remains 1.75 bit/param."
+    },
+    {
+      "id": "F116",
+      "claim": "iPhone 17 Pro/Pro Max use A19 Pro with a 16-core Neural Engine and 12GB RAM.",
+      "value": "A19 Pro; 16-core ANE; 12GB",
+      "sources": [
+        "S113"
+      ],
+      "status": "verified",
+      "note": "Apple does not publish TOPS."
+    },
+    {
+      "id": "F117",
+      "claim": "iPhone 18 Pro/Pro Max use A20 Pro (2nm) with a dual 16-core Neural Engine, 12GB RAM, and 50% higher unified memory bandwidth than A19 Pro.",
+      "value": "A20 Pro; dual 16-core ANE; 12GB; +50% BW",
+      "sources": [
+        "S114",
+        "S115",
+        "S116"
+      ],
+      "status": "vendor",
+      "note": "Bandwidth absolute value not published by Apple."
+    },
+    {
+      "id": "F118",
+      "claim": "A20 Pro is reported to use a 96-bit memory interface; with 9600MT/s this yields about 115.2GB/s, consistent with Apple's +50% claim over a 64-bit 76.8GB/s A19 Pro.",
+      "value": "~115.2GB/s",
+      "sources": [
+        "S116"
+      ],
+      "status": "estimate",
+      "note": "Leak + arithmetic; Apple has not published absolute bandwidth."
+    },
+    {
+      "id": "F119",
+      "claim": "Galaxy S26 Ultra uses Snapdragon 8 Elite Gen 5 with 12GB or 16GB RAM and Android 16 (upgradable to 17).",
+      "value": "SD 8 Elite Gen 5; 12/16GB",
+      "sources": [
+        "S117"
+      ],
+      "status": "verified",
+      "note": "Device specifications."
+    },
+    {
+      "id": "F120",
+      "claim": "Pixel 11 Pro XL uses Google Tensor G6 with 12GB or 16GB RAM and Android 17.",
+      "value": "Tensor G6; 12/16GB",
+      "sources": [
+        "S118"
+      ],
+      "status": "verified",
+      "note": "Device specifications."
+    },
+    {
+      "id": "F121",
+      "claim": "Dimensity 9500 supports LPDDR5X 10667 and the NPU 990, with claims of over 2x token generation speed and 56% lower peak NPU power versus the previous generation.",
+      "value": "LPDDR5X 10667; NPU 990; >2x; -56%",
+      "sources": [
+        "S119"
+      ],
+      "status": "vendor",
+      "note": "Vendor claims; absolute tok/s not given."
+    },
+    {
+      "id": "F122",
+      "claim": "For planning, Android foreground-app budgets are about 3.5GB on 8GB devices, 5.5GB on 12GB devices, and 7.5GB on 16GB devices.",
+      "value": "3.5 / 5.5 / 7.5GB",
+      "sources": [
+        "S125"
+      ],
+      "status": "estimate",
+      "note": "Not an OS limit; LMK/zRAM/OEM dependent."
+    },
+    {
+      "id": "F123",
+      "claim": "LiteRT-LM reports Gemma4-E2B (2,583MB) decode at 47 tok/s CPU / 52 tok/s GPU on Galaxy S26 Ultra and 25 CPU / 57 GPU on iPhone 17 Pro.",
+      "value": "47/52 vs 25/57 tok/s",
+      "sources": [
+        "S120"
+      ],
+      "status": "vendor",
+      "note": "Official LiteRT-LM benchmark table; batch 1."
+    },
+    {
+      "id": "F124",
+      "claim": "LiteRT-LM reports Gemma4-E4B (3,654MB) decode at 18 tok/s CPU / 22 tok/s GPU on Galaxy S26 Ultra and 10 CPU / 25 GPU on iPhone 17 Pro.",
+      "value": "18/22 vs 10/25 tok/s",
+      "sources": [
+        "S120"
+      ],
+      "status": "vendor",
+      "note": "Official LiteRT-LM benchmark table; batch 1."
+    },
+    {
+      "id": "F125",
+      "claim": "LiteRT-LM reports Gemma3-1B (1,005MB) decode at 33 tok/s CPU and 24 tok/s GPU on Galaxy S24 Ultra.",
+      "value": "33 CPU / 24 GPU",
+      "sources": [
+        "S120"
+      ],
+      "status": "vendor",
+      "note": "GPU is slower than CPU for this small model."
+    },
+    {
+      "id": "F126",
+      "claim": "LiteRT-LM reports Phi-4-mini (3,906MB) decode at 7 tok/s CPU and 10 tok/s GPU on Galaxy S24 Ultra.",
+      "value": "7 CPU / 10 GPU",
+      "sources": [
+        "S120"
+      ],
+      "status": "vendor",
+      "note": "Large file, low tok/s."
+    },
+    {
+      "id": "F127",
+      "claim": "LiteRT-LM reports Qwen2.5-1.5B (1,598MB) decode at 34 tok/s CPU and 31 tok/s GPU on Galaxy S25 Ultra.",
+      "value": "34 CPU / 31 GPU",
+      "sources": [
+        "S120"
+      ],
+      "status": "vendor",
+      "note": "CPU slightly faster."
+    },
+    {
+      "id": "F128",
+      "claim": "LiteRT-LM reports Qwen3-0.6B (586MB) decode at 9 tok/s CPU and 21 tok/s GPU on Vivo X300 Pro.",
+      "value": "9 CPU / 21 GPU",
+      "sources": [
+        "S120"
+      ],
+      "status": "vendor",
+      "note": "CPU result may reflect a power-saving configuration."
+    },
+    {
+      "id": "F129",
+      "claim": "Android NNAPI is deprecated as of Android 15; performance-critical workloads should migrate to LiteRT GPU/NPU or vendor delegates.",
+      "value": "NNAPI deprecated",
+      "sources": [
+        "S124"
+      ],
+      "status": "verified",
+      "note": "NNAPI may fall back to CPU."
+    },
+    {
+      "id": "F130",
+      "claim": "LiteRT NPU acceleration requires Android API 31+, arm64-v8a, and supported SoCs; Qualcomm support covers Snapdragon 8 Gen 2 and newer, MediaTek covers Dimensity 7300-9500.",
+      "value": "API 31+; arm64; SD 8 Gen 2+; Dimensity 7300-9500",
+      "sources": [
+        "S121",
+        "S122",
+        "S123"
+      ],
+      "status": "verified",
+      "note": "AOT/JIT and Play AI Pack are supported."
+    },
+    {
+      "id": "F131",
+      "claim": "Google Play limits: base module 500MB, individual feature module 500MB, individual asset pack 1.5GB, cumulative 4GB for install-time content, 30GB for on-demand asset packs.",
+      "value": "500MB base; 4GB total; 30GB on-demand",
+      "sources": [
+        "S126"
+      ],
+      "status": "verified",
+      "note": "200MB+ apps show a mobile-data warning."
+    },
+    {
+      "id": "F132",
+      "claim": "Gemini Nano Prompt API accepts under 4,000 input tokens, recommends outputs under 4K tokens, blocks background use, and enforces per-app quotas.",
+      "value": "<4K input; <4K output; no background; quota",
+      "sources": [
+        "S128",
+        "S129"
+      ],
+      "status": "verified",
+      "note": "Prompt API is beta and device-limited."
+    },
+    {
+      "id": "F133",
+      "claim": "Gemini Nano support is device-specific and split across nano-v2/v3/v4; supported devices include Pixel 9/10/11 and Galaxy S25/S26 families.",
+      "value": "nano-v2/v3/v4; device list",
+      "sources": [
+        "S128"
+      ],
+      "status": "verified",
+      "note": "Feature-specific and Prompt APIs have different device lists."
+    },
+    {
+      "id": "F134",
+      "claim": "Bonsai 2B has 12KiB KV per token (6 full layers, 2 KV heads, 256 key/value dims), so 262K context needs 3.0GiB of FP16 KV.",
+      "value": "12KiB/token; 3.0GiB at 262K",
+      "sources": [
+        "S132"
+      ],
+      "status": "derived",
+      "note": "4B/9B use 32KiB/token and need 8.0GiB at 262K."
+    },
+    {
+      "id": "F135",
+      "claim": "Qwen3 0.6B has 112KiB KV per token, so 32K context needs 3.5GiB, more than its 4-bit weights (0.31GiB).",
+      "value": "112KiB/token; 3.5GiB at 32K",
+      "sources": [
+        "S139"
+      ],
+      "status": "derived",
+      "note": "28 layers, 8 KV heads, head_dim 128, FP16; config."
+    },
+    {
+      "id": "F136",
+      "claim": "With 0.35GiB runtime, Bonsai 2B needs about 0.80GiB at 4K and 3.75GiB at 262K.",
+      "value": "0.80GiB / 3.75GiB",
+      "sources": [
+        "S132"
+      ],
+      "status": "derived",
+      "note": "Weights 0.40GiB; KV 0.05/3.0GiB."
+    },
+    {
+      "id": "F137",
+      "claim": "Bonsai 9B needs about 3.21GiB at 32K and 6.21GiB at 128K, so 128K fits a 16GB Android budget but not an iPhone 6GB budget.",
+      "value": "3.21GiB / 6.21GiB",
+      "sources": [
+        "S131"
+      ],
+      "status": "derived",
+      "note": "Weights 1.86GiB; KV 1.0/4.0GiB."
+    },
+    {
+      "id": "F138",
+      "claim": "Llama 3.2 8B at 4.5 bpw needs about 5.04GiB at 4K and 8.54GiB at 32K; the 32K case exceeds a 16GB Android planning budget of 7.5GiB.",
+      "value": "5.04GiB / 8.54GiB",
+      "sources": [
+        "S132"
+      ],
+      "status": "derived",
+      "note": "Weights 4.19GiB; KV 0.5/4.0GiB; runtime 0.35GiB."
+    },
+    {
+      "id": "F139",
+      "claim": "Bonsai reports 0.125 vs 0.216 mWh per generated token at 9B on M5 Pro for ternary vs BF16, 1.7-2.0x lower energy.",
+      "value": "0.125 vs 0.216 mWh/token",
+      "sources": [
+        "S109"
+      ],
+      "status": "vendor",
+      "note": "Board power includes GPU memory on M5 Pro."
+    },
+    {
+      "id": "F140",
+      "claim": "Apple claims up to 40% higher sustained performance for iPhone 18 Pro versus the previous generation, aided by a 3x larger vapor chamber and side-by-side memory packaging.",
+      "value": "+40% sustained",
+      "sources": [
+        "S115",
+        "S116"
+      ],
+      "status": "vendor",
+      "note": "Sustained-performance claim; independent reviews vary."
+    },
+    {
+      "id": "F141",
+      "claim": "Qwen3.5 2B uses a 3:1 hybrid layout (18 linear + 6 full attention), 2 KV heads, 256 key/value dims, so KV is 12KiB per token and 262K needs 3.0GiB.",
+      "value": "12KiB/token; 3.0GiB at 262K",
+      "sources": [
+        "S140"
+      ],
+      "status": "derived",
+      "note": "Same KV geometry as Bonsai 2B; Qwen3.5 2B 4-bit is 4.33GiB total at 262K."
+    }
+  ]
+}
