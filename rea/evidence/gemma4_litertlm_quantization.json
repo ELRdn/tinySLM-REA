@@ -1,0 +1,169 @@
+{
+  "E2B": {
+    "tag": "E2B",
+    "range": "bytes 4734976-138952703/2008432640",
+    "buffers": 1749,
+    "buffer_bytes": 2003241709,
+    "components": {
+      "input_embedding": {
+        "bytes": 102760448,
+        "tensors": 3,
+        "types": {
+          "9": 1,
+          "2": 1,
+          "0": 1
+        }
+      },
+      "per_layer_model_projection": {
+        "bytes": 13834248,
+        "tensors": 5,
+        "types": {
+          "0": 3,
+          "9": 1,
+          "2": 1
+        }
+      },
+      "per_layer_norm": {
+        "bytes": 1024,
+        "tensors": 1,
+        "types": {
+          "0": 1
+        }
+      },
+      "norm": {
+        "bytes": 1081484,
+        "tensors": 211,
+        "types": {
+          "0": 211
+        }
+      },
+      "attention": {
+        "bytes": 140452760,
+        "tensors": 580,
+        "types": {
+          "0": 380,
+          "17": 100,
+          "2": 100
+        }
+      },
+      "mlp": {
+        "bytes": 501289800,
+        "tensors": 525,
+        "types": {
+          "0": 315,
+          "17": 45,
+          "2": 105,
+          "9": 60
+        }
+      },
+      "per_layer_gate": {
+        "bytes": 13834520,
+        "tensors": 175,
+        "types": {
+          "0": 105,
+          "9": 35,
+          "2": 35
+        }
+      },
+      "per_layer_projection": {
+        "bytes": 14192920,
+        "tensors": 175,
+        "types": {
+          "0": 105,
+          "9": 35,
+          "2": 35
+        }
+      },
+      "per_layer_embeddings": {
+        "bytes": 1211105280,
+        "tensors": 70,
+        "types": {
+          "3": 70
+        }
+      }
+    }
+  },
+  "E4B": {
+    "tag": "E4B",
+    "range": "bytes 4734976-138952703/2969059328",
+    "buffers": 2174,
+    "buffer_bytes": 2963835237,
+    "components": {
+      "input_embedding": {
+        "bytes": 169869312,
+        "tensors": 3,
+        "types": {
+          "9": 1,
+          "2": 1,
+          "0": 1
+        }
+      },
+      "per_layer_model_projection": {
+        "bytes": 27611144,
+        "tensors": 5,
+        "types": {
+          "0": 3,
+          "9": 1,
+          "2": 1
+        }
+      },
+      "per_layer_norm": {
+        "bytes": 1024,
+        "tensors": 1,
+        "types": {
+          "0": 1
+        }
+      },
+      "norm": {
+        "bytes": 2160808,
+        "tensors": 253,
+        "types": {
+          "0": 253
+        }
+      },
+      "attention": {
+        "bytes": 295573728,
+        "tensors": 774,
+        "types": {
+          "0": 510,
+          "17": 132,
+          "2": 132
+        }
+      },
+      "mlp": {
+        "bytes": 1659249648,
+        "tensors": 630,
+        "types": {
+          "0": 378,
+          "17": 126,
+          "2": 126
+        }
+      },
+      "per_layer_gate": {
+        "bytes": 27611472,
+        "tensors": 210,
+        "types": {
+          "0": 126,
+          "9": 42,
+          "2": 42
+        }
+      },
+      "per_layer_projection": {
+        "bytes": 28385616,
+        "tensors": 210,
+        "types": {
+          "0": 126,
+          "9": 42,
+          "2": 42
+        }
+      },
+      "per_layer_embeddings": {
+        "bytes": 748683264,
+        "tensors": 84,
+        "types": {
+          "3": 84
+        }
+      }
+    }
+  }
+}

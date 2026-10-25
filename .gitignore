@@ -14,6 +14,9 @@ research/tokenizers/*/tokenizer.json
 research/tokenizers/*/config.json
 research/tokenizers/*/tokenizer_config.json
 research/tokenizers/*/special_tokens_map.json
+research/tokenizers/*__tokenizer.json
+research/tokenizers/*__tokenizer.model
+rea/targets/
 rea/webgpu_app/*.js
 rea/webgpu_app/*.html
 

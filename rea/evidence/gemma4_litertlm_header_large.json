@@ -1,0 +1,125 @@
+{
+  "12B_gpu": {
+    "tag": "12B_gpu",
+    "file": "gemma-4-12B-it-gpu.litertlm",
+    "content_range": "bytes 0-8388607/5986074624",
+    "magic": "LITERTLM",
+    "version": [
+      1,
+      6,
+      0
+    ],
+    "header_end": 704,
+    "system": {
+      "author": "The ODML Authors",
+      "uuid": "eb68f68c-5caf-434d-bf63-60b2c9883c2b",
+      "creation_timestamp": "2026-08-06T00:47:20.511575+00:00"
+    },
+    "sections": [
+      {
+        "begin": 16384,
+        "end": 29203,
+        "type": 5,
+        "items": {}
+      },
+      {
+        "begin": 32768,
+        "end": 4721781,
+        "type": 4,
+        "items": {}
+      },
+      {
+        "begin": 4734976,
+        "end": 5986074624,
+        "type": 3,
+        "items": {
+          "model_type": "tf_lite_artisan_text_decoder",
+          "backend_constraint": "gpu_artisan",
+          "gpu_artisan_weights_version": "0.0"
+        }
+      }
+    ]
+  },
+  "26B_gpu": {
+    "tag": "26B_gpu",
+    "file": "gemma-4-26B-A4B-it-gpu.litertlm",
+    "content_range": "bytes 0-8388607/15786524672",
+    "magic": "LITERTLM",
+    "version": [
+      1,
+      6,
+      0
+    ],
+    "header_end": 704,
+    "system": {
+      "author": "The ODML Authors",
+      "uuid": "671d1605-dbbb-427f-8e3a-6cedc26c4321",
+      "creation_timestamp": "2026-08-05T23:05:00.902451+00:00"
+    },
+    "sections": [
+      {
+        "begin": 16384,
+        "end": 29231,
+        "type": 5,
+        "items": {}
+      },
+      {
+        "begin": 32768,
+        "end": 4721781,
+        "type": 4,
+        "items": {}
+      },
+      {
+        "begin": 4734976,
+        "end": 15786524672,
+        "type": 3,
+        "items": {
+          "model_type": "tf_lite_artisan_text_decoder",
+          "backend_constraint": "gpu_artisan",
+          "gpu_artisan_weights_version": "0.0"
+        }
+      }
+    ]
+  },
+  "31B_gpu": {
+    "tag": "31B_gpu",
+    "file": "gemma-4-31B-it-gpu.litertlm",
+    "content_range": "bytes 0-8388607/19217989632",
+    "magic": "LITERTLM",
+    "version": [
+      1,
+      6,
+      0
+    ],
+    "header_end": 704,
+    "system": {
+      "author": "The ODML Authors",
+      "uuid": "c72d8708-10f9-4b52-921c-26797bcf523d",
+      "creation_timestamp": "2026-08-06T00:01:22.157350+00:00"
+    },
+    "sections": [
+      {
+        "begin": 16384,
+        "end": 29231,
+        "type": 5,
+        "items": {}
+      },
+      {
+        "begin": 32768,
+        "end": 4721781,
+        "type": 4,
+        "items": {}
+      },
+      {
+        "begin": 4734976,
+        "end": 19217989632,
+        "type": 3,
+        "items": {
+          "model_type": "tf_lite_artisan_text_decoder",
+          "backend_constraint": "gpu_artisan",
+          "gpu_artisan_weights_version": "0.0"
+        }
+      }
+    ]
+  }
+}

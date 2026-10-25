@@ -1,0 +1,2003 @@
+{
+  "schema": "tinySLM-REA/gemma4-facts-v1",
+  "date": "2026-10-25",
+  "count": 186,
+  "labels": [
+    "観測",
+    "導出",
+    "論文",
+    "公式",
+    "ベンダー主張",
+    "ベンダー自己測定",
+    "デバイス仕様",
+    "経験則",
+    "二次資料",
+    "推測",
+    "未検証"
+  ],
+  "facts": [
+    {
+      "id": "G4-PARAM-E2B",
+      "claim": "E2B total parameters",
+      "value": 5123178979,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "safetensors header; BF16 tensor shapes"
+    },
+    {
+      "id": "G4-LINEAR-E2B",
+      "claim": "E2B linear-layer parameters",
+      "value": 1881953280,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "attention + MLP/MoE + per-layer gates/projections"
+    },
+    {
+      "id": "G4-EMBED-E2B",
+      "claim": "E2B embedding + PLE parameters",
+      "value": 2778988544,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "token embedding + PLE + per-layer model projection"
+    },
+    {
+      "id": "G4-PARAM-E4B",
+      "claim": "E4B total parameters",
+      "value": 7996157418,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "safetensors header; BF16 tensor shapes"
+    },
+    {
+      "id": "G4-LINEAR-E4B",
+      "claim": "E4B linear-layer parameters",
+      "value": 4000342528,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "attention + MLP/MoE + per-layer gates/projections"
+    },
+    {
+      "id": "G4-EMBED-E4B",
+      "claim": "E4B embedding + PLE parameters",
+      "value": 3544711168,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "token embedding + PLE + per-layer model projection"
+    },
+    {
+      "id": "G4-PARAM-12B",
+      "claim": "12B total parameters",
+      "value": 11959730224,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "safetensors header; BF16 tensor shapes"
+    },
+    {
+      "id": "G4-LINEAR-12B",
+      "claim": "12B linear-layer parameters",
+      "value": 10899976192,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "attention + MLP/MoE + per-layer gates/projections"
+    },
+    {
+      "id": "G4-EMBED-12B",
+      "claim": "12B embedding + PLE parameters",
+      "value": 1006632960,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "token embedding + PLE + per-layer model projection"
+    },
+    {
+      "id": "G4-PARAM-26B-A4B",
+      "claim": "26B-A4B total parameters",
+      "value": 25805936206,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "safetensors header; BF16 tensor shapes"
+    },
+    {
+      "id": "G4-LINEAR-26B-A4B",
+      "claim": "26B-A4B linear-layer parameters",
+      "value": 24483448320,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "attention + MLP/MoE + per-layer gates/projections"
+    },
+    {
+      "id": "G4-EMBED-26B-A4B",
+      "claim": "26B-A4B embedding + PLE parameters",
+      "value": 738197504,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "token embedding + PLE + per-layer model projection"
+    },
+    {
+      "id": "G4-PARAM-31B",
+      "claim": "31B total parameters",
+      "value": 31273088876,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "safetensors header; BF16 tensor shapes"
+    },
+    {
+      "id": "G4-LINEAR-31B",
+      "claim": "31B linear-layer parameters",
+      "value": 29286763520,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "attention + MLP/MoE + per-layer gates/projections"
+    },
+    {
+      "id": "G4-EMBED-31B",
+      "claim": "31B embedding + PLE parameters",
+      "value": 1409286144,
+      "unit": "parameters",
+      "source": "rea/evidence/gemma4_safetensors_breakdown.json",
+      "label": "観測",
+      "verified": true,
+      "note": "token embedding + PLE + per-layer model projection"
+    },
+    {
+      "id": "G4-ARCH-E2B",
+      "claim": "E2B layers / full / KV-shared",
+      "value": [
+        35,
+        7,
+        20
+      ],
+      "unit": "count",
+      "source": "research/gemma4/gemma-4-E2B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": "4:1 local:global"
+    },
+    {
+      "id": "G4-ARCH-E4B",
+      "claim": "E4B layers / full / KV-shared",
+      "value": [
+        42,
+        7,
+        18
+      ],
+      "unit": "count",
+      "source": "research/gemma4/gemma-4-E4B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": "5:1 local:global"
+    },
+    {
+      "id": "G4-ARCH-12B",
+      "claim": "12B layers / full / KV-shared",
+      "value": [
+        48,
+        8,
+        0
+      ],
+      "unit": "count",
+      "source": "research/gemma4/gemma-4-12B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": "K=V global, unified"
+    },
+    {
+      "id": "G4-ARCH-26B",
+      "claim": "26B-A4B layers / full / KV-shared",
+      "value": [
+        30,
+        5,
+        0
+      ],
+      "unit": "count",
+      "source": "research/gemma4/gemma-4-26B-A4B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": "MoE 128 experts, top-8"
+    },
+    {
+      "id": "G4-ARCH-31B",
+      "claim": "31B layers / full / KV-shared",
+      "value": [
+        60,
+        10,
+        0
+      ],
+      "unit": "count",
+      "source": "research/gemma4/gemma-4-31B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": "K=V global"
+    },
+    {
+      "id": "G4-VOCAB",
+      "claim": "Gemma 4 vocabulary",
+      "value": 262144,
+      "unit": "tokens",
+      "source": "research/gemma4/gemma-4-E2B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": "shared across sizes"
+    },
+    {
+      "id": "G4-CTX-E2B",
+      "claim": "E2B native context",
+      "value": 131072,
+      "unit": "tokens",
+      "source": "research/gemma4/gemma-4-E2B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": "mobile LiteRT card caps at 32K"
+    },
+    {
+      "id": "G4-CTX-E4B",
+      "claim": "E4B native context",
+      "value": 131072,
+      "unit": "tokens",
+      "source": "research/gemma4/gemma-4-E4B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": "mobile LiteRT card caps at 32K"
+    },
+    {
+      "id": "G4-CTX-12B",
+      "claim": "12B native context",
+      "value": 262144,
+      "unit": "tokens",
+      "source": "research/gemma4/gemma-4-12B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": "mobile LiteRT card supports 128K"
+    },
+    {
+      "id": "G4-CTX-26B",
+      "claim": "26B-A4B native context",
+      "value": 262144,
+      "unit": "tokens",
+      "source": "research/gemma4/gemma-4-26B-A4B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-CTX-31B",
+      "claim": "31B native context",
+      "value": 262144,
+      "unit": "tokens",
+      "source": "research/gemma4/gemma-4-31B-it__config.json",
+      "label": "公式",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-LITERT-E2B",
+      "claim": "E2B LiteRT-LM GPU text bundle",
+      "value": 2008432640,
+      "unit": "bytes",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "HF litert-community; text decoder"
+    },
+    {
+      "id": "G4-LITERT-E4B",
+      "claim": "E4B LiteRT-LM GPU text bundle",
+      "value": 2969059328,
+      "unit": "bytes",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "HF litert-community; text decoder"
+    },
+    {
+      "id": "G4-LITERT-12B",
+      "claim": "12B LiteRT-LM GPU text bundle",
+      "value": 5986074624,
+      "unit": "bytes",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "HF litert-community; text decoder"
+    },
+    {
+      "id": "G4-LITERT-26B-A4B",
+      "claim": "26B-A4B LiteRT-LM GPU text bundle",
+      "value": 15786524672,
+      "unit": "bytes",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "HF litert-community; text decoder"
+    },
+    {
+      "id": "G4-LITERT-31B",
+      "claim": "31B LiteRT-LM GPU text bundle",
+      "value": 19217989632,
+      "unit": "bytes",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "HF litert-community; text decoder"
+    },
+    {
+      "id": "G4-GENERIC-E2B",
+      "claim": "E2B generic LiteRT-LM bundle",
+      "value": 2588147712,
+      "unit": "bytes",
+      "source": "Hugging Face litert-community file listing",
+      "label": "観測",
+      "verified": true,
+      "note": "includes audio/vision where supported"
+    },
+    {
+      "id": "G4-GENERIC-E4B",
+      "claim": "E4B generic LiteRT-LM bundle",
+      "value": 3659530240,
+      "unit": "bytes",
+      "source": "Hugging Face litert-community file listing",
+      "label": "観測",
+      "verified": true,
+      "note": "includes audio/vision where supported"
+    },
+    {
+      "id": "G4-GENERIC-12B",
+      "claim": "12B generic LiteRT-LM bundle",
+      "value": 6883278368,
+      "unit": "bytes",
+      "source": "Hugging Face litert-community file listing",
+      "label": "観測",
+      "verified": true,
+      "note": "includes audio/vision where supported"
+    },
+    {
+      "id": "G4-GGUF-E2B",
+      "claim": "E2B QAT Q4_0 GGUF",
+      "value": 3349516256,
+      "unit": "bytes",
+      "source": "rea/evidence/gemma4_qat_gguf.json",
+      "label": "観測",
+      "verified": true,
+      "note": "Q4_0 + Q6_K embeddings"
+    },
+    {
+      "id": "G4-GGUF-E4B",
+      "claim": "E4B QAT Q4_0 GGUF",
+      "value": 5154941280,
+      "unit": "bytes",
+      "source": "rea/evidence/gemma4_qat_gguf.json",
+      "label": "観測",
+      "verified": true,
+      "note": "Q4_0 + Q6_K embeddings"
+    },
+    {
+      "id": "G4-GGUF-12B",
+      "claim": "12B QAT Q4_0 GGUF",
+      "value": 6975879296,
+      "unit": "bytes",
+      "source": "rea/evidence/gemma4_qat_gguf.json",
+      "label": "観測",
+      "verified": true,
+      "note": "Q4_0 + Q6_K embeddings"
+    },
+    {
+      "id": "G4-GGUF-26B-A4B",
+      "claim": "26B-A4B QAT Q4_0 GGUF",
+      "value": 14439363584,
+      "unit": "bytes",
+      "source": "rea/evidence/gemma4_qat_gguf.json",
+      "label": "観測",
+      "verified": true,
+      "note": "Q4_0 + Q6_K embeddings"
+    },
+    {
+      "id": "G4-GGUF-31B",
+      "claim": "31B QAT Q4_0 GGUF",
+      "value": 17651001568,
+      "unit": "bytes",
+      "source": "rea/evidence/gemma4_qat_gguf.json",
+      "label": "観測",
+      "verified": true,
+      "note": "Q4_0 + Q6_K embeddings"
+    },
+    {
+      "id": "G4-TERN-W-E2B",
+      "claim": "E2B ternary-estimate weights",
+      "value": 1.647,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "linear 1.75bpw + observed non-linear precision"
+    },
+    {
+      "id": "G4-QAT-W-E2B",
+      "claim": "E2B QAT text weights",
+      "value": 1.87,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "LiteRT-LM GPU bundle"
+    },
+    {
+      "id": "G4-KV-E2B-32768",
+      "claim": "E2B FP16 KV at 32K",
+      "value": 0.193,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "conservative: K and V counted separately"
+    },
+    {
+      "id": "G4-KV8-E2B-32768",
+      "claim": "E2B INT8 KV at 32K",
+      "value": 0.097,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-KV-E2B-131072",
+      "claim": "E2B FP16 KV at 128K",
+      "value": 0.756,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "conservative: K and V counted separately"
+    },
+    {
+      "id": "G4-KV8-E2B-131072",
+      "claim": "E2B INT8 KV at 128K",
+      "value": 0.378,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-T32-E2B",
+      "claim": "E2B ternary total at 32K, runtime 0.35GiB",
+      "value": 2.19,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "FP16 KV"
+    },
+    {
+      "id": "G4-Q32-E2B",
+      "claim": "E2B QAT total at 32K, runtime 0.35GiB",
+      "value": 2.317,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "INT8 KV"
+    },
+    {
+      "id": "G4-T128-E2B",
+      "claim": "E2B ternary total at 128K, runtime 0.35GiB",
+      "value": 2.753,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "FP16 KV"
+    },
+    {
+      "id": "G4-TERN-W-E4B",
+      "claim": "E4B ternary-estimate weights",
+      "value": 1.75,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "linear 1.75bpw + observed non-linear precision"
+    },
+    {
+      "id": "G4-QAT-W-E4B",
+      "claim": "E4B QAT text weights",
+      "value": 2.765,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "LiteRT-LM GPU bundle"
+    },
+    {
+      "id": "G4-KV-E4B-32768",
+      "claim": "E4B FP16 KV at 32K",
+      "value": 0.52,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "conservative: K and V counted separately"
+    },
+    {
+      "id": "G4-KV8-E4B-32768",
+      "claim": "E4B INT8 KV at 32K",
+      "value": 0.26,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-KV-E4B-131072",
+      "claim": "E4B FP16 KV at 128K",
+      "value": 2.02,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "conservative: K and V counted separately"
+    },
+    {
+      "id": "G4-KV8-E4B-131072",
+      "claim": "E4B INT8 KV at 128K",
+      "value": 1.01,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-T32-E4B",
+      "claim": "E4B ternary total at 32K, runtime 0.35GiB",
+      "value": 2.62,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "FP16 KV"
+    },
+    {
+      "id": "G4-Q32-E4B",
+      "claim": "E4B QAT total at 32K, runtime 0.35GiB",
+      "value": 3.375,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "INT8 KV"
+    },
+    {
+      "id": "G4-T128-E4B",
+      "claim": "E4B ternary total at 128K, runtime 0.35GiB",
+      "value": 4.12,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "FP16 KV"
+    },
+    {
+      "id": "G4-TERN-W-12B",
+      "claim": "12B ternary-estimate weights",
+      "value": 2.711,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "linear 1.75bpw + observed non-linear precision"
+    },
+    {
+      "id": "G4-QAT-W-12B",
+      "claim": "12B QAT text weights",
+      "value": 5.575,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "LiteRT-LM GPU bundle"
+    },
+    {
+      "id": "G4-KV-12B-32768",
+      "claim": "12B FP16 KV at 32K",
+      "value": 0.812,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "conservative: K and V counted separately"
+    },
+    {
+      "id": "G4-KV8-12B-32768",
+      "claim": "12B INT8 KV at 32K",
+      "value": 0.406,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-KV-12B-131072",
+      "claim": "12B FP16 KV at 128K",
+      "value": 2.312,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "conservative: K and V counted separately"
+    },
+    {
+      "id": "G4-KV8-12B-131072",
+      "claim": "12B INT8 KV at 128K",
+      "value": 1.156,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-T32-12B",
+      "claim": "12B ternary total at 32K, runtime 0.35GiB",
+      "value": 3.874,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "FP16 KV"
+    },
+    {
+      "id": "G4-Q32-12B",
+      "claim": "12B QAT total at 32K, runtime 0.35GiB",
+      "value": 6.331,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "INT8 KV"
+    },
+    {
+      "id": "G4-T128-12B",
+      "claim": "12B ternary total at 128K, runtime 0.35GiB",
+      "value": 5.374,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "FP16 KV"
+    },
+    {
+      "id": "G4-TERN-W-26B-A4B",
+      "claim": "26B-A4B ternary-estimate weights",
+      "value": 5.571,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "linear 1.75bpw + observed non-linear precision"
+    },
+    {
+      "id": "G4-QAT-W-26B-A4B",
+      "claim": "26B-A4B QAT text weights",
+      "value": 14.702,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "LiteRT-LM GPU bundle"
+    },
+    {
+      "id": "G4-KV-26B-A4B-32768",
+      "claim": "26B-A4B FP16 KV at 32K",
+      "value": 0.82,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "conservative: K and V counted separately"
+    },
+    {
+      "id": "G4-KV8-26B-A4B-32768",
+      "claim": "26B-A4B INT8 KV at 32K",
+      "value": 0.41,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-KV-26B-A4B-131072",
+      "claim": "26B-A4B FP16 KV at 128K",
+      "value": 2.695,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "conservative: K and V counted separately"
+    },
+    {
+      "id": "G4-KV8-26B-A4B-131072",
+      "claim": "26B-A4B INT8 KV at 128K",
+      "value": 1.348,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-T32-26B-A4B",
+      "claim": "26B-A4B ternary total at 32K, runtime 0.35GiB",
+      "value": 6.742,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "FP16 KV"
+    },
+    {
+      "id": "G4-Q32-26B-A4B",
+      "claim": "26B-A4B QAT total at 32K, runtime 0.35GiB",
+      "value": 15.463,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "INT8 KV"
+    },
+    {
+      "id": "G4-T128-26B-A4B",
+      "claim": "26B-A4B ternary total at 128K, runtime 0.35GiB",
+      "value": 8.617,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "FP16 KV"
+    },
+    {
+      "id": "G4-TERN-W-31B",
+      "claim": "31B ternary-estimate weights",
+      "value": 7.062,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "linear 1.75bpw + observed non-linear precision"
+    },
+    {
+      "id": "G4-QAT-W-31B",
+      "claim": "31B QAT text weights",
+      "value": 17.898,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "LiteRT-LM GPU bundle"
+    },
+    {
+      "id": "G4-KV-31B-32768",
+      "claim": "31B FP16 KV at 32K",
+      "value": 3.281,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "conservative: K and V counted separately"
+    },
+    {
+      "id": "G4-KV8-31B-32768",
+      "claim": "31B INT8 KV at 32K",
+      "value": 1.641,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-KV-31B-131072",
+      "claim": "31B FP16 KV at 128K",
+      "value": 10.781,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "conservative: K and V counted separately"
+    },
+    {
+      "id": "G4-KV8-31B-131072",
+      "claim": "31B INT8 KV at 128K",
+      "value": 5.391,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-T32-31B",
+      "claim": "31B ternary total at 32K, runtime 0.35GiB",
+      "value": 10.694,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "FP16 KV"
+    },
+    {
+      "id": "G4-Q32-31B",
+      "claim": "31B QAT total at 32K, runtime 0.35GiB",
+      "value": 19.889,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "INT8 KV"
+    },
+    {
+      "id": "G4-T128-31B",
+      "claim": "31B ternary total at 128K, runtime 0.35GiB",
+      "value": 18.194,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "FP16 KV"
+    },
+    {
+      "id": "G4-HYBRID-E2B",
+      "claim": "E2B hybrid (MLP ternary, attention INT4) 32K total",
+      "value": 2.27,
+      "unit": "GiB",
+      "source": "experiments/gemma4_mobile.py",
+      "label": "導出",
+      "verified": true,
+      "note": "all-ternary upper bound is 2.19GiB"
+    },
+    {
+      "id": "G4-HYBRID-E4B",
+      "claim": "E4B hybrid (MLP ternary, attention INT4) 32K total",
+      "value": 2.79,
+      "unit": "GiB",
+      "source": "experiments/gemma4_mobile.py",
+      "label": "導出",
+      "verified": true,
+      "note": "all-ternary upper bound is 2.62GiB"
+    },
+    {
+      "id": "G4-HYBRID-12B",
+      "claim": "12B hybrid (MLP ternary, attention INT4) 32K total",
+      "value": 4.5,
+      "unit": "GiB",
+      "source": "experiments/gemma4_mobile.py",
+      "label": "導出",
+      "verified": true,
+      "note": "all-ternary upper bound is 3.87GiB"
+    },
+    {
+      "id": "G4-HYBRID-26B-A4B",
+      "claim": "26B-A4B hybrid (MLP ternary, attention INT4) 32K total",
+      "value": 7.03,
+      "unit": "GiB",
+      "source": "experiments/gemma4_mobile.py",
+      "label": "導出",
+      "verified": true,
+      "note": "all-ternary upper bound is 6.74GiB"
+    },
+    {
+      "id": "G4-HYBRID-31B",
+      "claim": "31B hybrid (MLP ternary, attention INT4) 32K total",
+      "value": 12.91,
+      "unit": "GiB",
+      "source": "experiments/gemma4_mobile.py",
+      "label": "導出",
+      "verified": true,
+      "note": "all-ternary upper bound is 10.69GiB"
+    },
+    {
+      "id": "G4-12B-QAT-4K",
+      "claim": "12B QAT total at 4K, runtime 0.35GiB",
+      "value": 6.11,
+      "unit": "GiB",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "INT8 KV; still above iPhone 6GiB"
+    },
+    {
+      "id": "G4-E2B-CROSSOVER",
+      "claim": "E2B ternary+FP16 KV vs QAT+INT8 KV package crossover",
+      "value": 75,
+      "unit": "K tokens",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "piecewise: sliding-window KV stops growing after W"
+    },
+    {
+      "id": "G4-E4B-CROSSOVER",
+      "claim": "E4B ternary+FP16 KV vs QAT+INT8 KV package crossover",
+      "value": 129,
+      "unit": "K tokens",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "piecewise: sliding-window KV stops growing after W"
+    },
+    {
+      "id": "G4-12B-CROSSOVER",
+      "claim": "12B ternary+FP16 KV vs QAT+INT8 KV package crossover",
+      "value": 347,
+      "unit": "K tokens",
+      "source": "rea/evidence/gemma4_mobile_fit.json",
+      "label": "導出",
+      "verified": true,
+      "note": "piecewise: sliding-window KV stops growing after W"
+    },
+    {
+      "id": "G4-BPW-E2B-token",
+      "claim": "E2B token effective bits/weight",
+      "value": 2.04,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E2B-ple",
+      "claim": "E2B ple effective bits/weight",
+      "value": 4.12,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E2B-attention",
+      "claim": "E2B attention effective bits/weight",
+      "value": 3.78,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E2B-mlp",
+      "claim": "E2B mlp effective bits/weight",
+      "value": 2.58,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E2B-gate",
+      "claim": "E2B gate effective bits/weight",
+      "value": 8.04,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E2B-proj",
+      "claim": "E2B proj effective bits/weight",
+      "value": 8.25,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E4B-token",
+      "claim": "E4B token effective bits/weight",
+      "value": 2.02,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E4B-ple",
+      "claim": "E4B ple effective bits/weight",
+      "value": 2.12,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E4B-attention",
+      "claim": "E4B attention effective bits/weight",
+      "value": 3.68,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E4B-mlp",
+      "claim": "E4B mlp effective bits/weight",
+      "value": 4.02,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E4B-gate",
+      "claim": "E4B gate effective bits/weight",
+      "value": 8.03,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-E4B-proj",
+      "claim": "E4B proj effective bits/weight",
+      "value": 8.25,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-12B-token",
+      "claim": "12B token effective bits/weight",
+      "value": 4.02,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-12B-attention",
+      "claim": "12B attention effective bits/weight",
+      "value": 4.01,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-BPW-12B-mlp",
+      "claim": "12B mlp effective bits/weight",
+      "value": 4.01,
+      "unit": "bpw",
+      "source": "rea/evidence/gemma4_litertlm_quantization.json",
+      "label": "観測",
+      "verified": true,
+      "note": "TFLite buffer bytes / logical params"
+    },
+    {
+      "id": "G4-ERR-E2B-self_attn-q_proj",
+      "claim": "E2B self_attn.q_proj ternary relative weight error",
+      "value": 52.5,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E2B-self_attn-k_proj",
+      "claim": "E2B self_attn.k_proj ternary relative weight error",
+      "value": 49.0,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E2B-self_attn-v_proj",
+      "claim": "E2B self_attn.v_proj ternary relative weight error",
+      "value": 49.2,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E2B-self_attn-o_proj",
+      "claim": "E2B self_attn.o_proj ternary relative weight error",
+      "value": 54.3,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E2B-mlp-gate_proj",
+      "claim": "E2B mlp.gate_proj ternary relative weight error",
+      "value": 53.0,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E2B-mlp-up_proj",
+      "claim": "E2B mlp.up_proj ternary relative weight error",
+      "value": 52.8,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E2B-mlp-down_proj",
+      "claim": "E2B mlp.down_proj ternary relative weight error",
+      "value": 53.3,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E4B-self_attn-q_proj",
+      "claim": "E4B self_attn.q_proj ternary relative weight error",
+      "value": 54.0,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E4B-self_attn-k_proj",
+      "claim": "E4B self_attn.k_proj ternary relative weight error",
+      "value": 52.1,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E4B-self_attn-v_proj",
+      "claim": "E4B self_attn.v_proj ternary relative weight error",
+      "value": 51.3,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E4B-self_attn-o_proj",
+      "claim": "E4B self_attn.o_proj ternary relative weight error",
+      "value": 55.7,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E4B-mlp-gate_proj",
+      "claim": "E4B mlp.gate_proj ternary relative weight error",
+      "value": 53.7,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E4B-mlp-up_proj",
+      "claim": "E4B mlp.up_proj ternary relative weight error",
+      "value": 53.4,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-E4B-mlp-down_proj",
+      "claim": "E4B mlp.down_proj ternary relative weight error",
+      "value": 54.5,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-12B-self_attn-q_proj",
+      "claim": "12B self_attn.q_proj ternary relative weight error",
+      "value": 57.8,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-12B-self_attn-k_proj",
+      "claim": "12B self_attn.k_proj ternary relative weight error",
+      "value": 57.1,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-12B-self_attn-v_proj",
+      "claim": "12B self_attn.v_proj ternary relative weight error",
+      "value": 61.1,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-12B-self_attn-o_proj",
+      "claim": "12B self_attn.o_proj ternary relative weight error",
+      "value": 57.5,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-12B-mlp-gate_proj",
+      "claim": "12B mlp.gate_proj ternary relative weight error",
+      "value": 58.4,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-12B-mlp-up_proj",
+      "claim": "12B mlp.up_proj ternary relative weight error",
+      "value": 56.1,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-ERR-12B-mlp-down_proj",
+      "claim": "12B mlp.down_proj ternary relative weight error",
+      "value": 57.4,
+      "unit": "%",
+      "source": "rea/evidence/gemma4_ternary_error.json",
+      "label": "観測",
+      "verified": true,
+      "note": "per-channel absmean, no QAT; weight-space error, not quality"
+    },
+    {
+      "id": "G4-TOK-gemma4",
+      "claim": "gemma4 Japanese tokens per 100 chars (all samples)",
+      "value": 61.3,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "8 samples"
+    },
+    {
+      "id": "G4-TOK-gemma3",
+      "claim": "gemma3 Japanese tokens per 100 chars (all samples)",
+      "value": 61.3,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "8 samples"
+    },
+    {
+      "id": "G4-TOK-qwen3p5",
+      "claim": "qwen3p5 Japanese tokens per 100 chars (all samples)",
+      "value": 56.7,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "8 samples"
+    },
+    {
+      "id": "G4-TOK-llama32",
+      "claim": "llama32 Japanese tokens per 100 chars (all samples)",
+      "value": 68.8,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "8 samples"
+    },
+    {
+      "id": "G4-TOK-llmjp",
+      "claim": "llmjp Japanese tokens per 100 chars (all samples)",
+      "value": 48.4,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "8 samples"
+    },
+    {
+      "id": "G4-ROLE-gemma4",
+      "claim": "gemma4 Japanese roleplay tokens per 100 chars",
+      "value": 67.1,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1 roleplay sample"
+    },
+    {
+      "id": "G4-ROLE-gemma3",
+      "claim": "gemma3 Japanese roleplay tokens per 100 chars",
+      "value": 67.1,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1 roleplay sample"
+    },
+    {
+      "id": "G4-ROLE-qwen3p5",
+      "claim": "qwen3p5 Japanese roleplay tokens per 100 chars",
+      "value": 58.9,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1 roleplay sample"
+    },
+    {
+      "id": "G4-ROLE-llama32",
+      "claim": "llama32 Japanese roleplay tokens per 100 chars",
+      "value": 69.9,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1 roleplay sample"
+    },
+    {
+      "id": "G4-ROLE-llmjp",
+      "claim": "llmjp Japanese roleplay tokens per 100 chars",
+      "value": 56.2,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1 roleplay sample"
+    },
+    {
+      "id": "G4-NAMES-gemma4",
+      "claim": "gemma4 Japanese names tokens per 100 chars",
+      "value": 95.2,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1 names sample"
+    },
+    {
+      "id": "G4-NAMES-gemma3",
+      "claim": "gemma3 Japanese names tokens per 100 chars",
+      "value": 95.2,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1 names sample"
+    },
+    {
+      "id": "G4-NAMES-qwen3p5",
+      "claim": "qwen3p5 Japanese names tokens per 100 chars",
+      "value": 95.2,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1 names sample"
+    },
+    {
+      "id": "G4-NAMES-llama32",
+      "claim": "llama32 Japanese names tokens per 100 chars",
+      "value": 104.8,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1 names sample"
+    },
+    {
+      "id": "G4-NAMES-llmjp",
+      "claim": "llmjp Japanese names tokens per 100 chars",
+      "value": 66.7,
+      "unit": "tokens/100 chars",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1 names sample"
+    },
+    {
+      "id": "G4-TPL-1",
+      "claim": "Chat template overhead at 1 turns",
+      "value": 21.7,
+      "unit": "%",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "146 tokens total"
+    },
+    {
+      "id": "G4-TPL-5",
+      "claim": "Chat template overhead at 5 turns",
+      "value": 17.6,
+      "unit": "%",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "494 tokens total"
+    },
+    {
+      "id": "G4-TPL-10",
+      "claim": "Chat template overhead at 10 turns",
+      "value": 16.9,
+      "unit": "%",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "929 tokens total"
+    },
+    {
+      "id": "G4-TPL-20",
+      "claim": "Chat template overhead at 20 turns",
+      "value": 16.4,
+      "unit": "%",
+      "source": "experiments/gemma4_tokenizer.py",
+      "label": "観測",
+      "verified": true,
+      "note": "1799 tokens total"
+    },
+    {
+      "id": "G4-MMLU-E2B",
+      "claim": "E2B MMLU Pro",
+      "value": 60.0,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "thinking mode unless stated"
+    },
+    {
+      "id": "G4-MMLU-E4B",
+      "claim": "E4B MMLU Pro",
+      "value": 69.4,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "thinking mode unless stated"
+    },
+    {
+      "id": "G4-MMLU-B12",
+      "claim": "B12 MMLU Pro",
+      "value": 77.2,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "thinking mode unless stated"
+    },
+    {
+      "id": "G4-MMLU-B26",
+      "claim": "B26 MMLU Pro",
+      "value": 82.6,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "thinking mode unless stated"
+    },
+    {
+      "id": "G4-MMLU-B31",
+      "claim": "B31 MMLU Pro",
+      "value": 85.2,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "thinking mode unless stated"
+    },
+    {
+      "id": "G4-MMMLU-E2B",
+      "claim": "E2B MMMLU",
+      "value": 67.4,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "multilingual average, not Japanese-only"
+    },
+    {
+      "id": "G4-MMMLU-E4B",
+      "claim": "E4B MMMLU",
+      "value": 76.6,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "multilingual average, not Japanese-only"
+    },
+    {
+      "id": "G4-MMMLU-B12",
+      "claim": "B12 MMMLU",
+      "value": 83.4,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "multilingual average, not Japanese-only"
+    },
+    {
+      "id": "G4-MMMLU-B26",
+      "claim": "B26 MMMLU",
+      "value": 86.3,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "multilingual average, not Japanese-only"
+    },
+    {
+      "id": "G4-MMMLU-B31",
+      "claim": "B31 MMMLU",
+      "value": 88.4,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "multilingual average, not Japanese-only"
+    },
+    {
+      "id": "G4-IFEVAL-E2B",
+      "claim": "E2B IFEval",
+      "value": 94.6,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "thinking mode"
+    },
+    {
+      "id": "G4-IFEVAL-E4B",
+      "claim": "E4B IFEval",
+      "value": 96.7,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "thinking mode"
+    },
+    {
+      "id": "G4-IFEVAL-B12",
+      "claim": "B12 IFEval",
+      "value": 97.2,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "thinking mode"
+    },
+    {
+      "id": "G4-IFEVAL-B26",
+      "claim": "B26 IFEval",
+      "value": 98.5,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "thinking mode"
+    },
+    {
+      "id": "G4-IFEVAL-B31",
+      "claim": "B31 IFEval",
+      "value": 98.9,
+      "unit": "%",
+      "source": "arXiv:2607.02770 Table 5",
+      "label": "論文",
+      "verified": true,
+      "note": "thinking mode"
+    },
+    {
+      "id": "G4-ARENA-31B",
+      "claim": "Gemma 4 31B Arena Elo",
+      "value": 1451,
+      "unit": "Elo",
+      "source": "arXiv:2607.02770 Table 4",
+      "label": "論文",
+      "verified": true,
+      "note": "as of 2026-06-19"
+    },
+    {
+      "id": "G4-ARENA-26B",
+      "claim": "Gemma 4 26B-A4B Arena Elo",
+      "value": 1438,
+      "unit": "Elo",
+      "source": "arXiv:2607.02770 Table 4",
+      "label": "論文",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-LANGS",
+      "claim": "Gemma 4 language coverage",
+      "value": [
+        140,
+        35
+      ],
+      "unit": "languages",
+      "source": "google/gemma-4-E2B-it model card",
+      "label": "公式",
+      "verified": true,
+      "note": "140+ pre-trained, 35+ out-of-box"
+    },
+    {
+      "id": "G4-SPEED-E2B-S26Ultra-CPU",
+      "claim": "E2B S26 Ultra CPU prefill/decode/TTFT",
+      "value": [
+        557,
+        46.9,
+        1.8
+      ],
+      "unit": [
+        "tok/s",
+        "tok/s",
+        "s"
+      ],
+      "source": "litert-community model card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": "1024 prefill / 256 decode / ctx 2048"
+    },
+    {
+      "id": "G4-SPEED-E2B-S26Ultra-GPU",
+      "claim": "E2B S26 Ultra GPU prefill/decode/TTFT",
+      "value": [
+        3808,
+        52.1,
+        0.3
+      ],
+      "unit": [
+        "tok/s",
+        "tok/s",
+        "s"
+      ],
+      "source": "litert-community model card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": "1024 prefill / 256 decode / ctx 2048"
+    },
+    {
+      "id": "G4-SPEED-E2B-iPhone17Pro-CPU",
+      "claim": "E2B iPhone 17 Pro CPU prefill/decode/TTFT",
+      "value": [
+        532,
+        25.0,
+        1.9
+      ],
+      "unit": [
+        "tok/s",
+        "tok/s",
+        "s"
+      ],
+      "source": "litert-community model card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": "1024 prefill / 256 decode / ctx 2048"
+    },
+    {
+      "id": "G4-SPEED-E2B-iPhone17Pro-GPU",
+      "claim": "E2B iPhone 17 Pro GPU prefill/decode/TTFT",
+      "value": [
+        2878,
+        56.5,
+        0.3
+      ],
+      "unit": [
+        "tok/s",
+        "tok/s",
+        "s"
+      ],
+      "source": "litert-community model card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": "1024 prefill / 256 decode / ctx 2048"
+    },
+    {
+      "id": "G4-SPEED-E4B-S26Ultra-CPU",
+      "claim": "E4B S26 Ultra CPU prefill/decode/TTFT",
+      "value": [
+        195,
+        17.7,
+        5.3
+      ],
+      "unit": [
+        "tok/s",
+        "tok/s",
+        "s"
+      ],
+      "source": "litert-community model card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": "1024 prefill / 256 decode / ctx 2048"
+    },
+    {
+      "id": "G4-SPEED-E4B-S26Ultra-GPU",
+      "claim": "E4B S26 Ultra GPU prefill/decode/TTFT",
+      "value": [
+        1293,
+        22.1,
+        0.8
+      ],
+      "unit": [
+        "tok/s",
+        "tok/s",
+        "s"
+      ],
+      "source": "litert-community model card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": "1024 prefill / 256 decode / ctx 2048"
+    },
+    {
+      "id": "G4-SPEED-E4B-iPhone17Pro-CPU",
+      "claim": "E4B iPhone 17 Pro CPU prefill/decode/TTFT",
+      "value": [
+        159,
+        9.7,
+        6.5
+      ],
+      "unit": [
+        "tok/s",
+        "tok/s",
+        "s"
+      ],
+      "source": "litert-community model card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": "1024 prefill / 256 decode / ctx 2048"
+    },
+    {
+      "id": "G4-SPEED-E4B-iPhone17Pro-GPU",
+      "claim": "E4B iPhone 17 Pro GPU prefill/decode/TTFT",
+      "value": [
+        1189,
+        25.1,
+        0.9
+      ],
+      "unit": [
+        "tok/s",
+        "tok/s",
+        "s"
+      ],
+      "source": "litert-community model card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": "1024 prefill / 256 decode / ctx 2048"
+    },
+    {
+      "id": "G4-MTP-E2B",
+      "claim": "E2B MTP free-form decode",
+      "value": [
+        51.5,
+        66.5,
+        1.29
+      ],
+      "unit": [
+        "tok/s",
+        "tok/s",
+        "x"
+      ],
+      "source": "litert-community E2B card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-MTP-E4B",
+      "claim": "E4B MTP free-form decode",
+      "value": [
+        21.9,
+        36.7,
+        1.68
+      ],
+      "unit": [
+        "tok/s",
+        "tok/s",
+        "x"
+      ],
+      "source": "litert-community E4B card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-12B-DESKTOP",
+      "claim": "12B M4 Air / M4 Pro decode",
+      "value": [
+        15,
+        29
+      ],
+      "unit": "tok/s",
+      "source": "litert-community 12B card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": "ctx 4096"
+    },
+    {
+      "id": "G4-26B-DESKTOP",
+      "claim": "26B-A4B M4 Max / 4090 decode",
+      "value": [
+        77,
+        86
+      ],
+      "unit": "tok/s",
+      "source": "litert-community 26B card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-31B-DESKTOP",
+      "claim": "31B M4 Max / 4090 decode",
+      "value": [
+        18,
+        28
+      ],
+      "unit": "tok/s",
+      "source": "litert-community 31B card",
+      "label": "ベンダー自己測定",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-LICENSE",
+      "claim": "Gemma 4 licence",
+      "value": "Apache 2.0",
+      "unit": "SPDX",
+      "source": "https://ai.google.dev/gemma/docs/gemma_4_license",
+      "label": "公式",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-SAFETY",
+      "claim": "Gemma 4 prohibited content",
+      "value": [
+        "CSAM",
+        "dangerous",
+        "sexually explicit",
+        "hate",
+        "harassment"
+      ],
+      "unit": "policy",
+      "source": "arXiv:2607.02770 §5.2",
+      "label": "論文",
+      "verified": true,
+      "note": "roleplay apps need moderation"
+    },
+    {
+      "id": "G4-QAT-CLAIM",
+      "claim": "QAT mobile schema",
+      "value": [
+        "static activations",
+        "channel-wise",
+        "targeted 2-bit",
+        "embedding+KV optimization"
+      ],
+      "unit": "policy",
+      "source": "Gemma 4 QAT blog (2026-06-05)",
+      "label": "ベンダー主張",
+      "verified": true,
+      "note": "no per-benchmark quality delta published"
+    },
+    {
+      "id": "G4-1GB",
+      "claim": "E2B text-only without PLE memory",
+      "value": "<1",
+      "unit": "GB",
+      "source": "Gemma 4 QAT blog (2026-06-05)",
+      "label": "ベンダー主張",
+      "verified": true,
+      "note": "observed E2B GPU bundle is 2.008GB including 1.211GB PLE"
+    },
+    {
+      "id": "G4-APK-SHA",
+      "claim": "AI Edge Gallery APK 1.0.20 SHA-256",
+      "value": "036da9de8c57a2ba6226a6e70d2ba00aa4f5546fa2409ee44639c14212f9f6cb",
+      "unit": "sha256",
+      "source": "REA inspect_artifact ev_deeffda66e0919d37f0be7f8cef1a0c5a679177a3a0ceba56e50f1a391f8ccb0",
+      "label": "観測",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-MACHO-SHA",
+      "claim": "LiteRT-LM macOS arm64 SHA-256",
+      "value": "97a9cfed1986e5231f8d80e70af59f95cb60322ca39c3397e28f8470e3bb6195",
+      "unit": "sha256",
+      "source": "REA open_binary",
+      "label": "観測",
+      "verified": true,
+      "note": ""
+    },
+    {
+      "id": "G4-DLL-SHA",
+      "claim": "LiteRT-LM Windows DLL SHA-256",
+      "value": "a226cbead46a2eef152f3009aa0a83262f1c2123f108aa3385bbdba07d427bd3",
+      "unit": "sha256",
+      "source": "REA inspect_pe_resources ev_c38e57dbe3b9d341714bd9c19ec27d5bd8f70f24016ab049e4970682ea2d64ea",
+      "label": "観測",
+      "verified": true,
+      "note": ""
+    }
+  ]
+}

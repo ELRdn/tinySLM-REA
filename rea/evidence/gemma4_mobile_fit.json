@@ -1,0 +1,1028 @@
+{
+  "schema": "tinySLM-REA/gemma4-mobile-v2",
+  "date": "2026-10-25",
+  "units": {
+    "memory": "GiB (2^30 bytes)",
+    "bytes": "bytes"
+  },
+  "assumptions": {
+    "ternary_linear_bpw": 1.75,
+    "runtime_gib": {
+      "lean": 0.35,
+      "gpu": 1.0,
+      "heavy": 1.5
+    },
+    "kv_bits_default": 16,
+    "qat_container": "LiteRT-LM GPU text decoder bundle"
+  },
+  "devices": [
+    [
+      "iPhone 6GiB",
+      6.0
+    ],
+    [
+      "Android 8GB",
+      3.5
+    ],
+    [
+      "Android 12GB",
+      5.5
+    ],
+    [
+      "Android 16GB",
+      7.5
+    ]
+  ],
+  "models": {
+    "E2B": {
+      "total": 5123178979,
+      "linear": 1881953280,
+      "embed": 2778988544,
+      "nontext": 475729088,
+      "layers": 35,
+      "full_non": 3,
+      "sliding_non": 12,
+      "kv_local": 1,
+      "kv_global": 1,
+      "win": 512,
+      "native_ctx": 131072,
+      "litert_ctx": 32768,
+      "litert_bytes": 2008432640,
+      "generic_bytes": 2588147712,
+      "gguf_bytes": 3349516256,
+      "mmlu": 60.0,
+      "mmmu": 67.4,
+      "ifeval": 90.4,
+      "arena": null,
+      "token_bpw": 2.04,
+      "ple_bpw": 4.12,
+      "nonlinear_bytes_observed": 1356809924,
+      "ternary_weights_gib": 1.647032056003809,
+      "qat_weights_gib": 1.8704986572265625,
+      "gguf_weights_gib": 3.1194801032543182,
+      "generic_bundle_gib": 2.410400390625,
+      "kv_gib": {
+        "4096": 0.029296875,
+        "32768": 0.193359375,
+        "131072": 0.755859375,
+        "262144": 1.505859375
+      },
+      "kv_int8_gib": {
+        "4096": 0.0146484375,
+        "32768": 0.0966796875,
+        "131072": 0.3779296875,
+        "262144": 0.7529296875
+      },
+      "total_ternary": {
+        "4096": {
+          "lean": 2.026328931003809,
+          "gpu": 2.676328931003809,
+          "heavy": 3.176328931003809
+        },
+        "32768": {
+          "lean": 2.190391431003809,
+          "gpu": 2.840391431003809,
+          "heavy": 3.340391431003809
+        },
+        "131072": {
+          "lean": 2.752891431003809,
+          "gpu": 3.402891431003809,
+          "heavy": 3.902891431003809
+        },
+        "262144": {
+          "lean": 3.502891431003809,
+          "gpu": 4.152891431003809,
+          "heavy": 4.652891431003809
+        }
+      },
+      "total_qat": {
+        "4096": {
+          "lean": 2.2351470947265626,
+          "gpu": 2.8851470947265625,
+          "heavy": 3.3851470947265625
+        },
+        "32768": {
+          "lean": 2.3171783447265626,
+          "gpu": 2.9671783447265625,
+          "heavy": 3.4671783447265625
+        },
+        "131072": {
+          "lean": 2.5984283447265626,
+          "gpu": 3.2484283447265625,
+          "heavy": 3.7484283447265625
+        },
+        "262144": {
+          "lean": 2.9734283447265626,
+          "gpu": 3.6234283447265625,
+          "heavy": 4.1234283447265625
+        }
+      },
+      "fit": {
+        "ternary": {
+          "32768_lean": {
+            "gib": 2.190391431003809,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "safe",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "32768_gpu": {
+            "gib": 2.840391431003809,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "nominal",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "32768_heavy": {
+            "gib": 3.340391431003809,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "nominal",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_lean": {
+            "gib": 2.752891431003809,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "safe",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_gpu": {
+            "gib": 3.402891431003809,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "nominal",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_heavy": {
+            "gib": 3.902891431003809,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          }
+        },
+        "qat": {
+          "32768_lean": {
+            "gib": 2.3171783447265626,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "safe",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "32768_gpu": {
+            "gib": 2.9671783447265625,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "nominal",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "32768_heavy": {
+            "gib": 3.4671783447265625,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "nominal",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_lean": {
+            "gib": 2.5984283447265626,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "safe",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_gpu": {
+            "gib": 3.2484283447265625,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "nominal",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_heavy": {
+            "gib": 3.7484283447265625,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          }
+        }
+      }
+    },
+    "E4B": {
+      "total": 7996157418,
+      "linear": 4000342528,
+      "embed": 3544711168,
+      "nontext": 478088384,
+      "layers": 42,
+      "full_non": 4,
+      "sliding_non": 20,
+      "kv_local": 2,
+      "kv_global": 2,
+      "win": 512,
+      "native_ctx": 131072,
+      "litert_ctx": 32768,
+      "litert_bytes": 2969059328,
+      "generic_bytes": 3659530240,
+      "gguf_bytes": 5154941280,
+      "mmlu": 69.4,
+      "mmmu": 76.6,
+      "ifeval": 96.7,
+      "arena": null,
+      "token_bpw": 2.02,
+      "ple_bpw": 2.12,
+      "nonlinear_bytes_observed": 1004322640,
+      "ternary_weights_gib": 1.7503253817558289,
+      "qat_weights_gib": 2.7651519775390625,
+      "gguf_weights_gib": 4.80091318488121,
+      "generic_bundle_gib": 3.408203125,
+      "kv_gib": {
+        "4096": 0.08203125,
+        "32768": 0.51953125,
+        "131072": 2.01953125,
+        "262144": 4.01953125
+      },
+      "kv_int8_gib": {
+        "4096": 0.041015625,
+        "32768": 0.259765625,
+        "131072": 1.009765625,
+        "262144": 2.009765625
+      },
+      "total_ternary": {
+        "4096": {
+          "lean": 2.182356631755829,
+          "gpu": 2.832356631755829,
+          "heavy": 3.332356631755829
+        },
+        "32768": {
+          "lean": 2.619856631755829,
+          "gpu": 3.269856631755829,
+          "heavy": 3.769856631755829
+        },
+        "131072": {
+          "lean": 4.1198566317558285,
+          "gpu": 4.769856631755829,
+          "heavy": 5.269856631755829
+        },
+        "262144": {
+          "lean": 6.1198566317558285,
+          "gpu": 6.769856631755829,
+          "heavy": 7.269856631755829
+        }
+      },
+      "total_qat": {
+        "4096": {
+          "lean": 3.1561676025390626,
+          "gpu": 3.8061676025390625,
+          "heavy": 4.3061676025390625
+        },
+        "32768": {
+          "lean": 3.3749176025390626,
+          "gpu": 4.0249176025390625,
+          "heavy": 4.5249176025390625
+        },
+        "131072": {
+          "lean": 4.124917602539062,
+          "gpu": 4.7749176025390625,
+          "heavy": 5.2749176025390625
+        },
+        "262144": {
+          "lean": 5.124917602539062,
+          "gpu": 5.7749176025390625,
+          "heavy": 6.2749176025390625
+        }
+      },
+      "fit": {
+        "ternary": {
+          "32768_lean": {
+            "gib": 2.619856631755829,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "safe",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "32768_gpu": {
+            "gib": 3.269856631755829,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "nominal",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "32768_heavy": {
+            "gib": 3.769856631755829,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_lean": {
+            "gib": 4.1198566317558285,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_gpu": {
+            "gib": 4.769856631755829,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "nominal",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_heavy": {
+            "gib": 5.269856631755829,
+            "label": {
+              "iPhone 6GiB": "nominal",
+              "Android 8GB": "no",
+              "Android 12GB": "nominal",
+              "Android 16GB": "safe"
+            }
+          }
+        },
+        "qat": {
+          "32768_lean": {
+            "gib": 3.3749176025390626,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "nominal",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "32768_gpu": {
+            "gib": 4.0249176025390625,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "32768_heavy": {
+            "gib": 4.5249176025390625,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "nominal",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_lean": {
+            "gib": 4.124917602539062,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_gpu": {
+            "gib": 4.7749176025390625,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "nominal",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_heavy": {
+            "gib": 5.2749176025390625,
+            "label": {
+              "iPhone 6GiB": "nominal",
+              "Android 8GB": "no",
+              "Android 12GB": "nominal",
+              "Android 16GB": "safe"
+            }
+          }
+        }
+      }
+    },
+    "12B": {
+      "total": 11959730224,
+      "linear": 10899976192,
+      "embed": 1006632960,
+      "nontext": 52379904,
+      "layers": 48,
+      "full_non": 8,
+      "sliding_non": 40,
+      "kv_local": 8,
+      "kv_global": 1,
+      "win": 1024,
+      "native_ctx": 262144,
+      "litert_ctx": 131072,
+      "litert_bytes": 5986074624,
+      "generic_bytes": 6883278368,
+      "gguf_bytes": 6975879296,
+      "mmlu": 77.2,
+      "mmmu": 83.4,
+      "ifeval": 97.2,
+      "arena": null,
+      "token_bpw": 4.02,
+      "ple_bpw": 0.0,
+      "nonlinear_bytes_observed": 508378304,
+      "ternary_weights_gib": 2.711242413148284,
+      "qat_weights_gib": 5.5749664306640625,
+      "gguf_weights_gib": 6.496793866157532,
+      "generic_bundle_gib": 6.410552531480789,
+      "kv_gib": {
+        "4096": 0.375,
+        "32768": 0.8125,
+        "131072": 2.3125,
+        "262144": 4.3125
+      },
+      "kv_int8_gib": {
+        "4096": 0.1875,
+        "32768": 0.40625,
+        "131072": 1.15625,
+        "262144": 2.15625
+      },
+      "total_ternary": {
+        "4096": {
+          "lean": 3.436242413148284,
+          "gpu": 4.086242413148284,
+          "heavy": 4.586242413148284
+        },
+        "32768": {
+          "lean": 3.873742413148284,
+          "gpu": 4.523742413148284,
+          "heavy": 5.023742413148284
+        },
+        "131072": {
+          "lean": 5.373742413148284,
+          "gpu": 6.023742413148284,
+          "heavy": 6.523742413148284
+        },
+        "262144": {
+          "lean": 7.373742413148284,
+          "gpu": 8.023742413148284,
+          "heavy": 8.523742413148284
+        }
+      },
+      "total_qat": {
+        "4096": {
+          "lean": 6.112466430664062,
+          "gpu": 6.7624664306640625,
+          "heavy": 7.2624664306640625
+        },
+        "32768": {
+          "lean": 6.331216430664062,
+          "gpu": 6.9812164306640625,
+          "heavy": 7.4812164306640625
+        },
+        "131072": {
+          "lean": 7.081216430664062,
+          "gpu": 7.7312164306640625,
+          "heavy": 8.231216430664062
+        },
+        "262144": {
+          "lean": 8.081216430664062,
+          "gpu": 8.731216430664062,
+          "heavy": 9.231216430664062
+        }
+      },
+      "fit": {
+        "ternary": {
+          "32768_lean": {
+            "gib": 3.873742413148284,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "safe",
+              "Android 16GB": "safe"
+            }
+          },
+          "32768_gpu": {
+            "gib": 4.523742413148284,
+            "label": {
+              "iPhone 6GiB": "safe",
+              "Android 8GB": "no",
+              "Android 12GB": "nominal",
+              "Android 16GB": "safe"
+            }
+          },
+          "32768_heavy": {
+            "gib": 5.023742413148284,
+            "label": {
+              "iPhone 6GiB": "nominal",
+              "Android 8GB": "no",
+              "Android 12GB": "nominal",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_lean": {
+            "gib": 5.373742413148284,
+            "label": {
+              "iPhone 6GiB": "nominal",
+              "Android 8GB": "no",
+              "Android 12GB": "nominal",
+              "Android 16GB": "safe"
+            }
+          },
+          "131072_gpu": {
+            "gib": 6.023742413148284,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "nominal"
+            }
+          },
+          "131072_heavy": {
+            "gib": 6.523742413148284,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "nominal"
+            }
+          }
+        },
+        "qat": {
+          "32768_lean": {
+            "gib": 6.331216430664062,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "nominal"
+            }
+          },
+          "32768_gpu": {
+            "gib": 6.9812164306640625,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "nominal"
+            }
+          },
+          "32768_heavy": {
+            "gib": 7.4812164306640625,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "nominal"
+            }
+          },
+          "131072_lean": {
+            "gib": 7.081216430664062,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "nominal"
+            }
+          },
+          "131072_gpu": {
+            "gib": 7.7312164306640625,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_heavy": {
+            "gib": 8.231216430664062,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          }
+        }
+      }
+    },
+    "26B-A4B": {
+      "total": 25805936206,
+      "linear": 24483448320,
+      "embed": 738197504,
+      "nontext": 572794416,
+      "layers": 30,
+      "full_non": 5,
+      "sliding_non": 25,
+      "kv_local": 8,
+      "kv_global": 2,
+      "win": 1024,
+      "native_ctx": 262144,
+      "litert_ctx": 131072,
+      "litert_bytes": 15786524672,
+      "generic_bytes": 15786524672,
+      "gguf_bytes": 14439363584,
+      "mmlu": 82.6,
+      "mmmu": 86.3,
+      "ifeval": 98.5,
+      "arena": 1438,
+      "token_bpw": 6.56,
+      "ple_bpw": 0.0,
+      "nonlinear_bytes_observed": 0,
+      "ternary_weights_gib": 5.571216152049601,
+      "qat_weights_gib": 14.702346801757812,
+      "gguf_weights_gib": 13.447705268859863,
+      "generic_bundle_gib": 14.702346801757812,
+      "kv_gib": {
+        "4096": 0.2734375,
+        "32768": 0.8203125,
+        "131072": 2.6953125,
+        "262144": 5.1953125
+      },
+      "kv_int8_gib": {
+        "4096": 0.13671875,
+        "32768": 0.41015625,
+        "131072": 1.34765625,
+        "262144": 2.59765625
+      },
+      "total_ternary": {
+        "4096": {
+          "lean": 6.194653652049601,
+          "gpu": 6.844653652049601,
+          "heavy": 7.344653652049601
+        },
+        "32768": {
+          "lean": 6.741528652049601,
+          "gpu": 7.391528652049601,
+          "heavy": 7.891528652049601
+        },
+        "131072": {
+          "lean": 8.6165286520496,
+          "gpu": 9.266528652049601,
+          "heavy": 9.766528652049601
+        },
+        "262144": {
+          "lean": 11.1165286520496,
+          "gpu": 11.766528652049601,
+          "heavy": 12.266528652049601
+        }
+      },
+      "total_qat": {
+        "4096": {
+          "lean": 15.189065551757812,
+          "gpu": 15.839065551757812,
+          "heavy": 16.339065551757812
+        },
+        "32768": {
+          "lean": 15.462503051757812,
+          "gpu": 16.112503051757812,
+          "heavy": 16.612503051757812
+        },
+        "131072": {
+          "lean": 16.400003051757814,
+          "gpu": 17.050003051757812,
+          "heavy": 17.550003051757812
+        },
+        "262144": {
+          "lean": 17.650003051757814,
+          "gpu": 18.300003051757812,
+          "heavy": 18.800003051757812
+        }
+      },
+      "fit": {
+        "ternary": {
+          "32768_lean": {
+            "gib": 6.741528652049601,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "nominal"
+            }
+          },
+          "32768_gpu": {
+            "gib": 7.391528652049601,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "nominal"
+            }
+          },
+          "32768_heavy": {
+            "gib": 7.891528652049601,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_lean": {
+            "gib": 8.6165286520496,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_gpu": {
+            "gib": 9.266528652049601,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_heavy": {
+            "gib": 9.766528652049601,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          }
+        },
+        "qat": {
+          "32768_lean": {
+            "gib": 15.462503051757812,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "32768_gpu": {
+            "gib": 16.112503051757812,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "32768_heavy": {
+            "gib": 16.612503051757812,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_lean": {
+            "gib": 16.400003051757814,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_gpu": {
+            "gib": 17.050003051757812,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_heavy": {
+            "gib": 17.550003051757812,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          }
+        }
+      }
+    },
+    "31B": {
+      "total": 31273088876,
+      "linear": 29286763520,
+      "embed": 1409286144,
+      "nontext": 575743536,
+      "layers": 60,
+      "full_non": 10,
+      "sliding_non": 50,
+      "kv_local": 16,
+      "kv_global": 4,
+      "win": 1024,
+      "native_ctx": 262144,
+      "litert_ctx": 131072,
+      "litert_bytes": 19217989632,
+      "generic_bytes": 19217989632,
+      "gguf_bytes": 17651001568,
+      "mmlu": 85.2,
+      "mmmu": 88.4,
+      "ifeval": 98.9,
+      "arena": 1451,
+      "token_bpw": 6.56,
+      "ple_bpw": 0.0,
+      "nonlinear_bytes_observed": 0,
+      "ternary_weights_gib": 7.062280250713229,
+      "qat_weights_gib": 17.898147583007812,
+      "gguf_weights_gib": 16.43877622485161,
+      "generic_bundle_gib": 17.898147583007812,
+      "kv_gib": {
+        "4096": 1.09375,
+        "32768": 3.28125,
+        "131072": 10.78125,
+        "262144": 20.78125
+      },
+      "kv_int8_gib": {
+        "4096": 0.546875,
+        "32768": 1.640625,
+        "131072": 5.390625,
+        "262144": 10.390625
+      },
+      "total_ternary": {
+        "4096": {
+          "lean": 8.506030250713229,
+          "gpu": 9.15603025071323,
+          "heavy": 9.65603025071323
+        },
+        "32768": {
+          "lean": 10.693530250713229,
+          "gpu": 11.34353025071323,
+          "heavy": 11.84353025071323
+        },
+        "131072": {
+          "lean": 18.19353025071323,
+          "gpu": 18.84353025071323,
+          "heavy": 19.34353025071323
+        },
+        "262144": {
+          "lean": 28.19353025071323,
+          "gpu": 28.84353025071323,
+          "heavy": 29.34353025071323
+        }
+      },
+      "total_qat": {
+        "4096": {
+          "lean": 18.795022583007814,
+          "gpu": 19.445022583007812,
+          "heavy": 19.945022583007812
+        },
+        "32768": {
+          "lean": 19.888772583007814,
+          "gpu": 20.538772583007812,
+          "heavy": 21.038772583007812
+        },
+        "131072": {
+          "lean": 23.638772583007814,
+          "gpu": 24.288772583007812,
+          "heavy": 24.788772583007812
+        },
+        "262144": {
+          "lean": 28.638772583007814,
+          "gpu": 29.288772583007812,
+          "heavy": 29.788772583007812
+        }
+      },
+      "fit": {
+        "ternary": {
+          "32768_lean": {
+            "gib": 10.693530250713229,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "32768_gpu": {
+            "gib": 11.34353025071323,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "32768_heavy": {
+            "gib": 11.84353025071323,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_lean": {
+            "gib": 18.19353025071323,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_gpu": {
+            "gib": 18.84353025071323,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_heavy": {
+            "gib": 19.34353025071323,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          }
+        },
+        "qat": {
+          "32768_lean": {
+            "gib": 19.888772583007814,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "32768_gpu": {
+            "gib": 20.538772583007812,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "32768_heavy": {
+            "gib": 21.038772583007812,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_lean": {
+            "gib": 23.638772583007814,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_gpu": {
+            "gib": 24.288772583007812,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          },
+          "131072_heavy": {
+            "gib": 24.788772583007812,
+            "label": {
+              "iPhone 6GiB": "no",
+              "Android 8GB": "no",
+              "Android 12GB": "no",
+              "Android 16GB": "no"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,6 +18,8 @@
 
 **追加レポート:** [`MOBILE-SLM.md`](MOBILE-SLM.md) — iPhone / Android 別に、どのモデルがどこまで載るのかを帯域・メモリ・NPU・OS・配布から定量化（約6.7万字）。
 
+**Gemma 4 編:** [`GEMMA4-TERNARY-MOBILE.md`](GEMMA4-TERNARY-MOBILE.md) — Gemma 4 E2B / E4B / 12B / 26B-A4B / 31B を、三値化・mobile QAT・iPhone / Android の予算・日本語 tokenizer・roleplay 評価まで分解（約10万字）。
+
 ---
 
 ## モバイル編の結論（先出し）
@@ -29,6 +31,21 @@
 - **8B 4-bitは4KならiPhone/Android 12GB（nominal）。** 32Kは8.54GiBで16GB Androidでも予算オーバー。
 - **NPUのTOPSはLLMの速さではない。** 帯域・KV・カーネルが支配。同じLiteRT-LMでもAndroid CPUがiPhone CPUより速いことがある。
 - **クロスプラットフォームはビルドマトリクス。** Core AI/MLX/Core ML/llama.cpp と LiteRT/ExecuTorch/llama.cpp で artifact が分かれる。
+
+---
+
+## Gemma 4 編の結論（先出し）
+
+- **E2B は「2B」ではない。** 5.12B total / 2.3B effective。E4B は 8.00B / 4.5B。PLE が E2B 2.35B、E4B 2.82B を占める。
+- **Google の mobile QAT は、すでに 2/4/8-bit 混合。** E2B の MLP は 2.58bpw、E4B の MLP は 4.02bpw、12B は一律 4.01bpw。三値の比較対象は「4-bit 一様」ではない。
+- **E2B の三値化は、ほぼ得しない。** 32K で 2.32 → 2.19GiB（5.6%）。128K では「ternary + FP16 KV」より「QAT + INT8 KV」が軽い。まず KV を INT8 にする。
+- **E4B の三値化は、Android 8GB の nominal を確保する。** 32K で 3.37 → 2.62GiB。ただし attention INT4 のハイブリッドは 2.79GiB で、safe 2.8GiB は紙一重。
+- **12B の三値化は、iPhone の本命。** 32K で 6.33 → 3.87GiB、ハイブリッドでも 4.50GiB。**QAT は 4K でも 6.11GiB で iPhone に入らない。**
+- **26B は 16GB Android の実験枠、31B はスマホ向けではない。** 三値 32K で 6.74 / 10.69GiB。
+- **日本語トークナイザは Gemma 3 のまま。** 100文字あたり 61.3（Qwen3.5 56.7、llm-jp 48.4）。名前は 95.2。Gemma 4 は「日本語だから必然」ではなく、多言語・モバイル runtime・QAT を含めた条件付き最適解。
+- **roleplay 品質は E2B/E4B/12B では未測定。** Arena は 31B（1451）と 26B-A4B（1438）だけ。MMLU では代用できない。
+- **「E2B 1GB」は PLE 抜きの数字。** 実バンドルは 2.008GB、PLE だけで 1.211GB。PLE をストリーミングすれば 0.8GB 級に近づくが、実装依存。
+- **最大の敵は、量子化ではなく QAT とカーネル。** 三値の重み誤差は 50〜60%。QAT / 蒸留なしの PTQ では roleplay の名前・敬語が壊れる。三値行列積の標準カーネルは未確認。
 
 ---
 
@@ -49,7 +66,10 @@
 |---|---|
 | [`REPORT.md`](REPORT.md) | 本編（第0〜21章 + 付録A〜F） |
 | [`MOBILE-SLM.md`](MOBILE-SLM.md) | モバイル編（iPhone / Android の要件差、モデル別フィット、量子化、KV、熱、配布） |
+| [`GEMMA4-TERNARY-MOBILE.md`](GEMMA4-TERNARY-MOBILE.md) | Gemma 4 編（E2B〜31B、三値化、mobile QAT、iPhone / Android、日本語、roleplay 評価） |
 | [`rea/analyze_gguf.py`](rea/analyze_gguf.py) | GGUF v3 パーサ + PTQ1_0 ブロックデコーダ |
+| [`rea/analyze_litertlm.py`](rea/analyze_litertlm.py) | `.litertlm` の FlatBuffer ヘッダー + TFLite テンソル解析 |
+| [`rea/analyze_gemma4_safetensors.py`](rea/analyze_gemma4_safetensors.py) | Gemma 4 の safetensors ヘッダー集計 + 三値化誤差の実測 |
 | [`rea/evidence/bonsai2b.json`](rea/evidence/bonsai2b.json) | 実モデルのメタデータ、テンソル一覧、ビット/パラメータ、KVキャッシュ計算 |
 | [`rea/evidence/bonsai_4b_9b_header.json`](rea/evidence/bonsai_4b_9b_header.json) | Bonsai 4B/9B のGGUFヘッダー（HTTP Range解析） |
 | [`rea/evidence/bonsai_4b_9b_header.md`](rea/evidence/bonsai_4b_9b_header.md) | 4B/9B のパラメータ、層、KV、ビット/パラメータ |
@@ -59,9 +79,20 @@
 | [`research/mobile_facts.json`](research/mobile_facts.json) | モバイル編の41の事実データベース |
 | [`research/factcheck.md`](research/factcheck.md) | 3パスのファクトチェック記録 |
 | [`research/mobile_factcheck.md`](research/mobile_factcheck.md) | モバイル編の3パス・ファクトチェック |
+| [`research/gemma4_facts.json`](research/gemma4_facts.json) | Gemma 4 編の186の事実データベース |
+| [`research/gemma4_factcheck.md`](research/gemma4_factcheck.md) | Gemma 4 編の3パス + 独立レビュー記録 |
+| [`rea/evidence/gemma4_safetensors_breakdown.json`](rea/evidence/gemma4_safetensors_breakdown.json) | 5モデルのパラメータ内訳（safetensors ヘッダー） |
+| [`rea/evidence/gemma4_qat_gguf.json`](rea/evidence/gemma4_qat_gguf.json) | QAT Q4_0 GGUF のテンソル型・パラメータ・サイズ |
+| [`rea/evidence/gemma4_litertlm_quantization.json`](rea/evidence/gemma4_litertlm_quantization.json) | E2B/E4B の `.litertlm` コンポーネント別実効 bpw |
+| [`rea/evidence/gemma4_litertlm_12b_quantization.json`](rea/evidence/gemma4_litertlm_12b_quantization.json) | 12B の INT4 バンドル解析 |
+| [`rea/evidence/gemma4_ternary_error.json`](rea/evidence/gemma4_ternary_error.json) | 三値化の重み空間誤差（実測） |
+| [`rea/evidence/gemma4_mobile_fit.json`](rea/evidence/gemma4_mobile_fit.json) | Gemma 4 のメモリ/KV/フィット表 |
+| [`rea/evidence/gemma4_tokenizer.json`](rea/evidence/gemma4_tokenizer.json) | 日本語トークナイザ + chat template の実験結果 |
 | [`research/papers/`](research/papers) | 一次資料のPDF/テキスト（主要30本） |
 | [`docs/references.md`](docs/references.md) | 完全な参考文献 |
 | [`experiments/mobile_requirements.py`](experiments/mobile_requirements.py) | モバイルSLMのメモリ/KV/帯域/フィット計算 + グラフ生成 |
+| [`experiments/gemma4_mobile.py`](experiments/gemma4_mobile.py) | Gemma 4 のメモリ/KV/フィット + 9枚のグラフ生成 |
+| [`experiments/gemma4_tokenizer.py`](experiments/gemma4_tokenizer.py) | 日本語トークナイザ + Gemma 4 chat template の実験 |
 | [`experiments/tokenizer_fertility.py`](experiments/tokenizer_fertility.py) | 日本語トークン効率の実験 |
 | [`experiments/cost_calculator.py`](experiments/cost_calculator.py) | API vs 自前ホストのコスト計算 |
 
@@ -97,6 +128,24 @@ python rea/analyze_gguf.py path/to/Ternary-Bonsai-2-2B-PTQ1_0.gguf \
 python experiments/mobile_requirements.py \
   --json rea/evidence/mobile_requirements.json --charts assets
 
+# Gemma 4 のメモリ/KV/フィット表 + 9枚のグラフ
+python experiments/gemma4_mobile.py \
+  --json rea/evidence/gemma4_mobile_fit.json --charts assets
+
+# Gemma 4 の日本語トークナイザ + chat template（tokenizer.json が必要）
+python experiments/gemma4_tokenizer.py \
+  --tokenizers research/tokenizers --json rea/evidence/gemma4_tokenizer.json
+
+# .litertlm のヘッダー + TFLite テンソル（HTTP Range）
+python rea/analyze_litertlm.py \
+  --url https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/resolve/main/gemma-4-E2B-it-gpu.litertlm \
+  --json rea/evidence/gemma4_litertlm_header.json
+
+# Gemma 4 の safetensors ヘッダー集計 + 三値化誤差
+python rea/analyze_gemma4_safetensors.py \
+  --url https://huggingface.co/google/gemma-4-E2B-it/resolve/main/model.safetensors \
+  --json rea/evidence/gemma4_safetensors_breakdown.json
+
 # 日本語トークン効率の実験（tokenizer.json が必要）
 python experiments/tokenizer_fertility.py
 
@@ -120,14 +169,24 @@ python experiments/cost_calculator.py --requests 1000000 --in 1000 --out 300
 - **90分:** 第0〜9章 + 第11章
 - **徹底:** 全部。第7章の量子化、第8章のKV、付録Eの再現方法が核心。
 
+### Gemma 4 編（GEMMA4-TERNARY-MOBILE.md）
+
+- **10分:** 第0章 → 第2章 → 第6章 → 第8章 → 付録F
+- **90分:** 第0〜11章 + 第13章
+- **徹底:** 全部。第4章の実物解析、第5.7節の三値化誤差、第6章のフィット表、第11章のQAT比較、第12章のQATレシピが核心。
+
 ---
 
 ## 事実ラベル
 
 - **【観測】** 実ファイル・バイト列・配布物から直接確認。
 - **【導出】** 観測値からの計算。
-- **【論文】** 一次資料（arXiv・公式ブログ・モデルカード）。
+- **【論文】** 一次資料（arXiv・技術レポート）。
+- **【公式】** モデルカード・ライセンス・公式ドキュメントの記載。
 - **【ベンダー主張】** 提供元の自己申告。独立再現なし。
+- **【ベンダー自己測定】** 提供元が自社環境で測ったベンチマーク。
+- **【デバイス仕様】** SoC・RAM・帯域などの公表仕様。
+- **【経験則】** 計画に使う経験値。OS の公式上限ではない。
 - **【推測】** 根拠はあるが断定できない。
 - **【未検証】** 未確認。断定禁止。
 
@@ -138,7 +197,11 @@ python experiments/cost_calculator.py --requests 1000000 --in 1000 --out 300
 - ベンチマークの独立再現はしていません。一次資料の報告値を引用しています。
 - モデルの品質・速度は測定していません。ファイル構造とメタデータの観測です。
 - WebGPU バンドルは実行していません。静的解析のみです。
-- 日本語トークン効率は1文のみの参考値です。
+- 日本語トークン効率は8サンプルの参考値です。
+- Gemma 4 の実機ベンチマークは未実施です。速度・メモリ・熱はベンダー値と計画値です。
+- Gemma 4 の三値モデルは未訓練です。品質は重み空間の誤差と外部論文からの推定です。
+- Gemma 4 の roleplay 人手評価は未実施です。第13章は評価設計の提案です。
+- APK の Java/native 逆コンパイルは未完了です（JADX / Ghidra 未設定）。
 - ベンダー主張（Bonsai、Phi、Gemma、Llama、Qwen、BitNet など）は、各提供元の自己申告です。
 
 追試・訂正・Issue を歓迎します。

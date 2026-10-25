@@ -1,0 +1,42 @@
+{
+  "file": "gemma-4-12B-it-gpu.litertlm",
+  "range": "bytes 4734976-206061567/5986074624",
+  "buffers": 1328,
+  "buffer_bytes": 5981080121,
+  "components": {
+    "input_embedding": {
+      "bytes": 505413632,
+      "tensors": 3,
+      "types": {
+        "I4": 1,
+        "I32": 1,
+        "F32": 1
+      }
+    },
+    "norm": {
+      "bytes": 2964672,
+      "tensors": 241,
+      "types": {
+        "F32": 241
+      }
+    },
+    "attention": {
+      "bytes": 1208008704,
+      "tensors": 648,
+      "types": {
+        "F32": 280,
+        "I4": 184,
+        "I32": 184
+      }
+    },
+    "mlp": {
+      "bytes": 4260003840,
+      "tensors": 432,
+      "types": {
+        "F32": 144,
+        "I4": 144,
+        "I32": 144
+      }
+    }
+  }
+}

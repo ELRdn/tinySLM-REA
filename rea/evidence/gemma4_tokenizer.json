@@ -1,0 +1,298 @@
+{
+  "schema": "tinySLM-REA/gemma4-tokenizer-v1",
+  "date": "2026-10-25",
+  "samples": 8,
+  "tokenizers": {
+    "per_sample": {
+      "keigo": {
+        "gemma4": {
+          "tokens": 31,
+          "chars": 68,
+          "tokens_per_100_chars": 45.6
+        },
+        "gemma3": {
+          "tokens": 31,
+          "chars": 68,
+          "tokens_per_100_chars": 45.6
+        },
+        "qwen3.5": {
+          "tokens": 27,
+          "chars": 68,
+          "tokens_per_100_chars": 39.7
+        },
+        "llama3.2": {
+          "tokens": 44,
+          "chars": 68,
+          "tokens_per_100_chars": 64.7
+        },
+        "llmjp": {
+          "tokens": 26,
+          "chars": 68,
+          "tokens_per_100_chars": 38.2
+        }
+      },
+      "roleplay": {
+        "gemma4": {
+          "tokens": 49,
+          "chars": 73,
+          "tokens_per_100_chars": 67.1
+        },
+        "gemma3": {
+          "tokens": 49,
+          "chars": 73,
+          "tokens_per_100_chars": 67.1
+        },
+        "qwen3.5": {
+          "tokens": 43,
+          "chars": 73,
+          "tokens_per_100_chars": 58.9
+        },
+        "llama3.2": {
+          "tokens": 51,
+          "chars": 73,
+          "tokens_per_100_chars": 69.9
+        },
+        "llmjp": {
+          "tokens": 41,
+          "chars": 73,
+          "tokens_per_100_chars": 56.2
+        }
+      },
+      "emotion": {
+        "gemma4": {
+          "tokens": 24,
+          "chars": 42,
+          "tokens_per_100_chars": 57.1
+        },
+        "gemma3": {
+          "tokens": 24,
+          "chars": 42,
+          "tokens_per_100_chars": 57.1
+        },
+        "qwen3.5": {
+          "tokens": 23,
+          "chars": 42,
+          "tokens_per_100_chars": 54.8
+        },
+        "llama3.2": {
+          "tokens": 26,
+          "chars": 42,
+          "tokens_per_100_chars": 61.9
+        },
+        "llmjp": {
+          "tokens": 19,
+          "chars": 42,
+          "tokens_per_100_chars": 45.2
+        }
+      },
+      "names": {
+        "gemma4": {
+          "tokens": 20,
+          "chars": 21,
+          "tokens_per_100_chars": 95.2
+        },
+        "gemma3": {
+          "tokens": 20,
+          "chars": 21,
+          "tokens_per_100_chars": 95.2
+        },
+        "qwen3.5": {
+          "tokens": 20,
+          "chars": 21,
+          "tokens_per_100_chars": 95.2
+        },
+        "llama3.2": {
+          "tokens": 22,
+          "chars": 21,
+          "tokens_per_100_chars": 104.8
+        },
+        "llmjp": {
+          "tokens": 14,
+          "chars": 21,
+          "tokens_per_100_chars": 66.7
+        }
+      },
+      "code_switch": {
+        "gemma4": {
+          "tokens": 30,
+          "chars": 73,
+          "tokens_per_100_chars": 41.1
+        },
+        "gemma3": {
+          "tokens": 30,
+          "chars": 73,
+          "tokens_per_100_chars": 41.1
+        },
+        "qwen3.5": {
+          "tokens": 29,
+          "chars": 73,
+          "tokens_per_100_chars": 39.7
+        },
+        "llama3.2": {
+          "tokens": 31,
+          "chars": 73,
+          "tokens_per_100_chars": 42.5
+        },
+        "llmjp": {
+          "tokens": 25,
+          "chars": 73,
+          "tokens_per_100_chars": 34.2
+        }
+      },
+      "onomatopoeia": {
+        "gemma4": {
+          "tokens": 25,
+          "chars": 30,
+          "tokens_per_100_chars": 83.3
+        },
+        "gemma3": {
+          "tokens": 25,
+          "chars": 30,
+          "tokens_per_100_chars": 83.3
+        },
+        "qwen3.5": {
+          "tokens": 25,
+          "chars": 30,
+          "tokens_per_100_chars": 83.3
+        },
+        "llama3.2": {
+          "tokens": 29,
+          "chars": 30,
+          "tokens_per_100_chars": 96.7
+        },
+        "llmjp": {
+          "tokens": 15,
+          "chars": 30,
+          "tokens_per_100_chars": 50.0
+        }
+      },
+      "prose": {
+        "gemma4": {
+          "tokens": 40,
+          "chars": 56,
+          "tokens_per_100_chars": 71.4
+        },
+        "gemma3": {
+          "tokens": 40,
+          "chars": 56,
+          "tokens_per_100_chars": 71.4
+        },
+        "qwen3.5": {
+          "tokens": 38,
+          "chars": 56,
+          "tokens_per_100_chars": 67.9
+        },
+        "llama3.2": {
+          "tokens": 42,
+          "chars": 56,
+          "tokens_per_100_chars": 75.0
+        },
+        "llmjp": {
+          "tokens": 33,
+          "chars": 56,
+          "tokens_per_100_chars": 58.9
+        }
+      },
+      "system": {
+        "gemma4": {
+          "tokens": 34,
+          "chars": 50,
+          "tokens_per_100_chars": 68.0
+        },
+        "gemma3": {
+          "tokens": 34,
+          "chars": 50,
+          "tokens_per_100_chars": 68.0
+        },
+        "qwen3.5": {
+          "tokens": 29,
+          "chars": 50,
+          "tokens_per_100_chars": 58.0
+        },
+        "llama3.2": {
+          "tokens": 39,
+          "chars": 50,
+          "tokens_per_100_chars": 78.0
+        },
+        "llmjp": {
+          "tokens": 27,
+          "chars": 50,
+          "tokens_per_100_chars": 54.0
+        }
+      }
+    },
+    "aggregate": {
+      "gemma4": {
+        "tokens": 253,
+        "chars": 413,
+        "tokens_per_100_chars": 61.3
+      },
+      "gemma3": {
+        "tokens": 253,
+        "chars": 413,
+        "tokens_per_100_chars": 61.3
+      },
+      "qwen3.5": {
+        "tokens": 234,
+        "chars": 413,
+        "tokens_per_100_chars": 56.7
+      },
+      "llama3.2": {
+        "tokens": 284,
+        "chars": 413,
+        "tokens_per_100_chars": 68.8
+      },
+      "llmjp": {
+        "tokens": 200,
+        "chars": 413,
+        "tokens_per_100_chars": 48.4
+      }
+    }
+  },
+  "chat_template": {
+    "rows": [
+      {
+        "turns": 1,
+        "rendered_chars": 302,
+        "rendered_tokens": 146,
+        "raw_chars": 201,
+        "raw_tokens": 120,
+        "overhead_tokens": 26,
+        "overhead_pct": 21.7
+      },
+      {
+        "turns": 5,
+        "rendered_chars": 974,
+        "rendered_tokens": 494,
+        "raw_chars": 709,
+        "raw_tokens": 420,
+        "overhead_tokens": 74,
+        "overhead_pct": 17.6
+      },
+      {
+        "turns": 10,
+        "rendered_chars": 1814,
+        "rendered_tokens": 929,
+        "raw_chars": 1344,
+        "raw_tokens": 795,
+        "overhead_tokens": 134,
+        "overhead_pct": 16.9
+      },
+      {
+        "turns": 20,
+        "rendered_chars": 3494,
+        "rendered_tokens": 1799,
+        "raw_chars": 2614,
+        "raw_tokens": 1545,
+        "overhead_tokens": 254,
+        "overhead_pct": 16.4
+      }
+    ],
+    "sample_rendered": "<bos><|turn>system\nあなたは落ち着いた口調で話す執事です。敬語を保ち、相手の感情に寄り添いながら、簡潔に答えてください。<turn|>\n<|turn>user\n「……どうして、そんなに優しいの？　私、あなたに何も返せないのに」\n彼女は俯いたまま、震える声でそう言った。<turn|>\n<|turn>model\n"
+  },
+  "notes": [
+    "Eight short samples; use for relative comparison, not corpus estimates.",
+    "Gemma 4 and Gemma 3 share the same tokenizer in this test.",
+    "Chat-template overhead uses the canonical Gemma 4 template, enable_thinking=false."
+  ]
+}

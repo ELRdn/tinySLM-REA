@@ -1,0 +1,342 @@
+{
+  "E2B": {
+    "total_params": 5123178979,
+    "total_bytes": 10246357958,
+    "dtype_bytes": {
+      "BF16": 10246357958
+    },
+    "text_params": 4647449891,
+    "active_text_params": 4647449891,
+    "nontext_params": 475729088,
+    "embed_params": 2778988544,
+    "linear_params": 1881953280,
+    "components": {
+      "audio_tower": {
+        "params": 304825088,
+        "bytes": 609650176,
+        "tensors": 751
+      },
+      "embed_audio": {
+        "params": 2359296,
+        "bytes": 4718592,
+        "tensors": 1
+      },
+      "embed_vision": {
+        "params": 1179648,
+        "bytes": 2359296,
+        "tensors": 1
+      },
+      "text_embed_tokens": {
+        "params": 402653184,
+        "bytes": 805306368,
+        "tensors": 1
+      },
+      "text_embed_per_layer": {
+        "params": 2348810240,
+        "bytes": 4697620480,
+        "tensors": 1
+      },
+      "text_layer_norm_scalar": {
+        "params": 215075,
+        "bytes": 430150,
+        "tensors": 175
+      },
+      "text_mlp": {
+        "params": 1557135360,
+        "bytes": 3114270720,
+        "tensors": 105
+      },
+      "text_per_layer_gate": {
+        "params": 13762560,
+        "bytes": 27525120,
+        "tensors": 35
+      },
+      "text_per_layer_proj_layer": {
+        "params": 13762560,
+        "bytes": 27525120,
+        "tensors": 35
+      },
+      "text_per_layer_norm_layer": {
+        "params": 53760,
+        "bytes": 107520,
+        "tensors": 35
+      },
+      "text_attn": {
+        "params": 297292800,
+        "bytes": 594585600,
+        "tensors": 210
+      },
+      "text_final_norm": {
+        "params": 1536,
+        "bytes": 3072,
+        "tensors": 1
+      },
+      "text_per_layer_proj": {
+        "params": 13762560,
+        "bytes": 27525120,
+        "tensors": 1
+      },
+      "text_per_layer_norm": {
+        "params": 256,
+        "bytes": 512,
+        "tensors": 1
+      },
+      "vision_tower": {
+        "params": 167365056,
+        "bytes": 334730112,
+        "tensors": 658
+      }
+    }
+  },
+  "E4B": {
+    "total_params": 7996157418,
+    "total_bytes": 15992314836,
+    "dtype_bytes": {
+      "BF16": 15992314836
+    },
+    "text_params": 7518069034,
+    "active_text_params": 7518069034,
+    "nontext_params": 478088384,
+    "embed_params": 3544711168,
+    "linear_params": 4000342528,
+    "components": {
+      "audio_tower": {
+        "params": 304825088,
+        "bytes": 609650176,
+        "tensors": 751
+      },
+      "embed_audio": {
+        "params": 3932160,
+        "bytes": 7864320,
+        "tensors": 1
+      },
+      "embed_vision": {
+        "params": 1966080,
+        "bytes": 3932160,
+        "tensors": 1
+      },
+      "text_embed_tokens": {
+        "params": 671088640,
+        "bytes": 1342177280,
+        "tensors": 1
+      },
+      "text_embed_per_layer": {
+        "params": 2818572288,
+        "bytes": 5637144576,
+        "tensors": 1
+      },
+      "text_layer_norm_scalar": {
+        "params": 430122,
+        "bytes": 860244,
+        "tensors": 210
+      },
+      "text_mlp": {
+        "params": 3303014400,
+        "bytes": 6606028800,
+        "tensors": 126
+      },
+      "text_per_layer_gate": {
+        "params": 27525120,
+        "bytes": 55050240,
+        "tensors": 42
+      },
+      "text_per_layer_proj_layer": {
+        "params": 27525120,
+        "bytes": 55050240,
+        "tensors": 42
+      },
+      "text_per_layer_norm_layer": {
+        "params": 107520,
+        "bytes": 215040,
+        "tensors": 42
+      },
+      "text_attn": {
+        "params": 642277888,
+        "bytes": 1284555776,
+        "tensors": 252
+      },
+      "text_final_norm": {
+        "params": 2560,
+        "bytes": 5120,
+        "tensors": 1
+      },
+      "text_per_layer_proj": {
+        "params": 27525120,
+        "bytes": 55050240,
+        "tensors": 1
+      },
+      "text_per_layer_norm": {
+        "params": 256,
+        "bytes": 512,
+        "tensors": 1
+      },
+      "vision_tower": {
+        "params": 167365056,
+        "bytes": 334730112,
+        "tensors": 658
+      }
+    }
+  },
+  "12B": {
+    "total_params": 11959730224,
+    "total_bytes": 23919460448,
+    "dtype_bytes": {
+      "BF16": 23919460448
+    },
+    "text_params": 11907350320,
+    "active_text_params": 11907350320,
+    "nontext_params": 52379904,
+    "embed_params": 1006632960,
+    "linear_params": 10899976192,
+    "components": {
+      "embed_audio": {
+        "params": 2457600,
+        "bytes": 4915200,
+        "tensors": 1
+      },
+      "embed_vision": {
+        "params": 14745600,
+        "bytes": 29491200,
+        "tensors": 1
+      },
+      "text_embed_tokens": {
+        "params": 1006632960,
+        "bytes": 2013265920,
+        "tensors": 1
+      },
+      "text_layer_norm_scalar": {
+        "params": 737328,
+        "bytes": 1474656,
+        "tensors": 240
+      },
+      "text_mlp": {
+        "params": 8493465600,
+        "bytes": 16986931200,
+        "tensors": 144
+      },
+      "text_attn": {
+        "params": 2406510592,
+        "bytes": 4813021184,
+        "tensors": 280
+      },
+      "text_final_norm": {
+        "params": 3840,
+        "bytes": 7680,
+        "tensors": 1
+      },
+      "vision_embedder": {
+        "params": 35176704,
+        "bytes": 70353408,
+        "tensors": 9
+      }
+    }
+  },
+  "26B-A4B": {
+    "total_params": 25805936206,
+    "total_bytes": 51611872412,
+    "dtype_bytes": {
+      "BF16": 51611872412
+    },
+    "text_params": 25233141790,
+    "active_text_params": 3822530590.0,
+    "nontext_params": 572794416,
+    "embed_params": 738197504,
+    "linear_params": 24483448320,
+    "components": {
+      "embed_vision": {
+        "params": 3244032,
+        "bytes": 6488064,
+        "tensors": 1
+      },
+      "text_embed_tokens": {
+        "params": 738197504,
+        "bytes": 1476395008,
+        "tensors": 1
+      },
+      "text_moe_experts": {
+        "params": 22837985280,
+        "bytes": 45675970560,
+        "tensors": 60
+      },
+      "text_layer_norm_scalar": {
+        "params": 591390,
+        "bytes": 1182780,
+        "tensors": 240
+      },
+      "text_mlp": {
+        "params": 535265280,
+        "bytes": 1070530560,
+        "tensors": 90
+      },
+      "text_router": {
+        "params": 10901760,
+        "bytes": 21803520,
+        "tensors": 90
+      },
+      "text_attn": {
+        "params": 1110197760,
+        "bytes": 2220395520,
+        "tensors": 175
+      },
+      "text_final_norm": {
+        "params": 2816,
+        "bytes": 5632,
+        "tensors": 1
+      },
+      "vision_tower": {
+        "params": 569550384,
+        "bytes": 1139100768,
+        "tensors": 355
+      }
+    }
+  },
+  "31B": {
+    "total_params": 31273088876,
+    "total_bytes": 62546177752,
+    "dtype_bytes": {
+      "BF16": 62546177752
+    },
+    "text_params": 30697345340,
+    "active_text_params": 30697345340,
+    "nontext_params": 575743536,
+    "embed_params": 1409286144,
+    "linear_params": 29286763520,
+    "components": {
+      "embed_vision": {
+        "params": 6193152,
+        "bytes": 12386304,
+        "tensors": 1
+      },
+      "text_embed_tokens": {
+        "params": 1409286144,
+        "bytes": 2818572288,
+        "tensors": 1
+      },
+      "text_layer_norm_scalar": {
+        "params": 1290300,
+        "bytes": 2580600,
+        "tensors": 300
+      },
+      "text_mlp": {
+        "params": 20808990720,
+        "bytes": 41617981440,
+        "tensors": 180
+      },
+      "text_attn": {
+        "params": 8477772800,
+        "bytes": 16955545600,
+        "tensors": 350
+      },
+      "text_final_norm": {
+        "params": 5376,
+        "bytes": 10752,
+        "tensors": 1
+      },
+      "vision_tower": {
+        "params": 569550384,
+        "bytes": 1139100768,
+        "tensors": 355
+      }
+    }
+  }
+}

@@ -4,6 +4,37 @@
 **モバイル編:** iPhone / Android の参考文献は [`MOBILE-SLM.md`](../MOBILE-SLM.md) 付録D にあります。
 **方針:** 論文は arXiv、モデルは Hugging Face のモデルカード、製品は公式ブログを優先。ベンダー主張は「vendor」と明記。URL は執筆時点のもの。
 
+**Gemma 4 編:** 完全な一覧は [`GEMMA4-TERNARY-MOBILE.md`](../GEMMA4-TERNARY-MOBILE.md) 付録D にあります。以下は主要な一次資料の抜粋です。
+
+---
+
+## Gemma 4 / モバイル三値化
+
+- **[G4-01] Gemma 4 Technical Report** — https://arxiv.org/abs/2607.02770 — arXiv:2607.02770v2、2026-07-24。アーキテクチャ、QAT、MTP、Arena、安全ポリシー。
+- **[G4-02] Gemma 4 E2B model card** — https://huggingface.co/google/gemma-4-E2B-it — 5.1B total / 2.3B effective、128K、140+ languages pre-trained、35+ out-of-box。
+- **[G4-03] Gemma 4 E4B model card** — https://huggingface.co/google/gemma-4-E4B-it — 8B total / 4.5B effective。
+- **[G4-04] Gemma 4 12B model card** — https://huggingface.co/google/gemma-4-12B-it — 12B unified、256K。
+- **[G4-05] Gemma 4 26B-A4B model card** — https://huggingface.co/google/gemma-4-26B-A4B-it — MoE 128 experts、top-8、3.8B active。
+- **[G4-06] Gemma 4 31B model card** — https://huggingface.co/google/gemma-4-31B-it — dense 31B。
+- **[G4-07] Gemma 4 QAT blog** — https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/ — 2026-06-05。mobile schema、static activations、2-bit targeted、「E2B 1GB」主張。
+- **[G4-08] Gemma 4 license** — https://ai.google.dev/gemma/docs/gemma_4_license — Apache 2.0。
+- **[G4-09] LiteRT-LM E2B** — https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm — GPU 2.008GB、generic 2.588GB、S26 / iPhone ベンチマーク。
+- **[G4-10] LiteRT-LM E4B** — https://huggingface.co/litert-community/gemma-4-E4B-it-litert-lm — GPU 2.969GB、generic 3.660GB。
+- **[G4-11] LiteRT-LM 12B** — https://huggingface.co/litert-community/gemma-4-12B-it-litert-lm — GPU 5.986GB、generic 6.883GB、128K。
+- **[G4-12] LiteRT-LM 26B-A4B** — https://huggingface.co/litert-community/gemma-4-26B-A4B-it-litert-lm — GPU 15.787GB。
+- **[G4-13] LiteRT-LM 31B** — https://huggingface.co/litert-community/gemma-4-31B-it-litert-lm — GPU 19.218GB。
+- **[G4-14] LiteRT-LM GitHub** — https://github.com/google-ai-edge/LiteRT-LM — v0.18.1、`CLiteRTLM.xcframework`、`.litertlm` schema。
+- **[G4-15] AI Edge Gallery APK 1.0.20** — https://github.com/google-ai-edge/gallery/releases — SHA-256 `036da9de8c57a2ba6226a6e70d2ba00aa4f5546fa2409ee44639c14212f9f6cb`。
+- **[G4-16] BitNet b1.58** — https://arxiv.org/abs/2402.17764 — ternary、QAT、専用カーネル。
+- **[G4-17] BitNet b1.58 2B4T** — https://arxiv.org/abs/2504.12285 — 2B、4T tokens。
+- **[G4-18] Ternary Bonsai 2 whitepaper** — https://github.com/PrismML-Eng/Bonsai-demo — PTQ1_0 1.75bpw。
+- **[G4-19] Qwen3.5-2B** — https://huggingface.co/Qwen/Qwen3.5-2B — 24 layers、3:1 Gated DeltaNet、262K、248K vocab。
+- **[G4-20] llm-jp-3-3.7b-instruct** — https://huggingface.co/llm-jp/llm-jp-3-3.7b-instruct — 日本語トークナイザの比較対象。
+- **[G4-21] MOBILE-SLM.md（本リポジトリ）** — iPhone / Android の予算・帯域・NPU・配布の前提。
+- **[G4-22] Chatbot Arena** — https://arxiv.org/abs/2403.04132 — ペアワイズ人手評価。
+
+**本プロジェクトの証拠:** `rea/evidence/gemma4_safetensors_breakdown.json`、`gemma4_qat_gguf.json`、`gemma4_litertlm_header.json`、`gemma4_litertlm_quantization.json`、`gemma4_litertlm_12b_quantization.json`、`gemma4_ternary_error.json`、`gemma4_mobile_fit.json`、`gemma4_tokenizer.json`。
+
 ---
 
 ## A. スケーリング・訓練
